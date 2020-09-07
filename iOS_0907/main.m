@@ -66,11 +66,15 @@
 }
 
 - (id)initWithSpeed:(int)speed color:(int)color;
-
+- (int)speed;
 
 @end
 
 @implementation Truck
+
+- (int)speed {
+  return _speed;
+}
 
 - (id)initWithSpeed:(int)speed color:(int)color {
   self = [super initWithColor:color];
