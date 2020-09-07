@@ -24,6 +24,10 @@
 //  - 인스턴스 변수의 소유권이 부모인 경우
 //   : 반드시 setter를 이용해야 한다.
 
+// 2. 인스턴스 변수가 없어도, 메소드의 이름 규칙이 setter, getter의 이름규칙을 정확히 따른다면,
+//    닷 연산자를 이용할 수 있다.
+//    => Swift 에서는 프로퍼티를 만들 때, 필드가 없는 프로퍼티도 만들 수 있습니다.
+
 @implementation Person
 - (NSString*)fullName {
   return [NSString stringWithFormat:@"%@, %@", _firstName, _lastName];
