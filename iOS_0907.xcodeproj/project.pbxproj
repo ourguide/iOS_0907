@@ -6,10 +6,6 @@
 	objectVersion = 50;
 	objects = {
 
-/* Begin PBXBuildFile section */
-		7A1DB1E1250601D1001119AE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A1DB1E0250601D1001119AE /* main.m */; };
-/* End PBXBuildFile section */
-
 /* Begin PBXCopyFilesBuildPhase section */
 		7A1DB1BF2505ABAF001119AE /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -35,7 +31,7 @@
 		7A1DB1DA2505F021001119AE /* 9_프로퍼티(MRC).m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "9_프로퍼티(MRC).m"; sourceTree = "<group>"; };
 		7A1DB1DC2505F388001119AE /* 10_프로퍼티(ARC).m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "10_프로퍼티(ARC).m"; sourceTree = "<group>"; };
 		7A1DB1DE2505FCFD001119AE /* 11_약한참조(autoniling).m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "11_약한참조(autoniling).m"; sourceTree = "<group>"; };
-		7A1DB1E0250601D1001119AE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		7A1DB1E0250601D1001119AE /* 12_프로퍼티활용.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "12_프로퍼티활용.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,7 +75,7 @@
 				7A1DB1DA2505F021001119AE /* 9_프로퍼티(MRC).m */,
 				7A1DB1DC2505F388001119AE /* 10_프로퍼티(ARC).m */,
 				7A1DB1DE2505FCFD001119AE /* 11_약한참조(autoniling).m */,
-				7A1DB1E0250601D1001119AE /* main.m */,
+				7A1DB1E0250601D1001119AE /* 12_프로퍼티활용.m */,
 			);
 			path = iOS_0907;
 			sourceTree = "<group>";
@@ -141,7 +137,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7A1DB1E1250601D1001119AE /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
