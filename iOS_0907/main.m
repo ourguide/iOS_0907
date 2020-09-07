@@ -6,8 +6,11 @@
 @interface Person : NSObject
 
 // MRC
-@property(retain) Phone* phone;
-// Setter에서 참조 계수가 증가한다.
+// @property(retain) Phone* phone;
+// - Setter에서 참조 계수가 증가한다. - retain
+
+@property(assign) Phone* phone;
+// - Setter에서 참조 계수는 조작하지 않는다. - assign
 
 @end
 
@@ -17,7 +20,7 @@
 
 @implementation Person
 - (void)dealloc {
-  [_phone release];
+  // [_phone release];
   
   [super dealloc];
 }
