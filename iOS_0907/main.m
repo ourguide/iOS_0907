@@ -7,6 +7,7 @@
 
 // MRC
 @property(retain) Phone* phone;
+// Setter에서 참조 계수가 증가한다.
 
 @end
 
@@ -34,7 +35,9 @@ int main() {
   Person* person = [Person new];
   Phone* phone = [Phone new];
   
+  printf("Ref count: %ld\n", [phone retainCount]);
   person.phone = phone;
+  printf("Ref count: %ld\n", [phone retainCount]);
   [phone release];
   
   printf("Release 되었음..\n");
