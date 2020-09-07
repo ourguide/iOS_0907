@@ -110,8 +110,9 @@ int main() {
   Car* car2 = [[Car alloc] initWithColor:100];
   printf("%d\n", [car2 color]);
   
-  // Truck* truck = [[Truck alloc] initWithSpeed:42 color:100];
-  Truck* truck = nil;
+  Truck* truck = [[Truck alloc] initWithSpeed:42
+                                        color:100];
+  // Truck* truck = nil;
   printf("%d\n", [truck color]); // ?
   
   // nil객체에 메소드를 호출하면, 크래시가 발생하지 않는다.
