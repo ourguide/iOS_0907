@@ -40,7 +40,6 @@
 
 // ObjC에서는 Selector를 통해 메소드를 참조할 수 있다.
 // => Selector를 통해 메소드를 호출할 수 있다.
-
 int main() {
   Car* car = [Car new];
   
@@ -64,6 +63,9 @@ int main() {
             withObject:[NSNumber numberWithInt:100]
             withObject:[NSNumber numberWithInt:200]];
 #pragma clang diagnostic push
+  
+  // 셀렉터를 통해 메소드의 이름도 알 수 있습니다.
+  printf("%s\n", sel_getName(s1));
   
   
 //  [car go];

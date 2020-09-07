@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7A1DB20C25061D03001119AE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A1DB20B25061D03001119AE /* main.m */; };
+		7A1DB20E250622A7001119AE /* 16_Selector원리.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A1DB20D250622A7001119AE /* 16_Selector원리.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -38,7 +38,8 @@
 		7A1DB1E0250601D1001119AE /* 12_프로퍼티활용.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "12_프로퍼티활용.m"; sourceTree = "<group>"; };
 		7A1DB1E225060CC5001119AE /* 13_객체생성방법.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "13_객체생성방법.m"; sourceTree = "<group>"; };
 		7A1DB1E425061124001119AE /* 14_Class.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = 14_Class.m; sourceTree = "<group>"; };
-		7A1DB20B25061D03001119AE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		7A1DB20B25061D03001119AE /* 15_Selector.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = 15_Selector.m; sourceTree = "<group>"; };
+		7A1DB20D250622A7001119AE /* 16_Selector원리.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "16_Selector원리.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,7 +86,8 @@
 				7A1DB1E0250601D1001119AE /* 12_프로퍼티활용.m */,
 				7A1DB1E225060CC5001119AE /* 13_객체생성방법.m */,
 				7A1DB1E425061124001119AE /* 14_Class.m */,
-				7A1DB20B25061D03001119AE /* main.m */,
+				7A1DB20B25061D03001119AE /* 15_Selector.m */,
+				7A1DB20D250622A7001119AE /* 16_Selector원리.m */,
 			);
 			path = iOS_0907;
 			sourceTree = "<group>";
@@ -147,7 +149,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7A1DB20C25061D03001119AE /* main.m in Sources */,
+				7A1DB20E250622A7001119AE /* 16_Selector원리.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
