@@ -32,7 +32,13 @@ class Car {
 @end
 
 int main() {
+  // Car 클래스에 new 메세지를 보낸다.
+  // - receiver: Car
+  // - new: selector
+  Car* car = [Car new];
+  car->_speed = 42;
   
+  printf("%d\n", car->_speed);
 }
 
 
