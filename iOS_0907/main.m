@@ -15,6 +15,12 @@
 @end
 
 @implementation Person
+- (void)dealloc {
+  [_phone release];
+  
+  [super dealloc];
+}
+
 @end
 
 @implementation Phone
