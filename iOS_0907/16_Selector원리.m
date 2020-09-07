@@ -20,6 +20,7 @@
 }
 @end
 
+// Command + ,: 설정
 #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
 int main() {
   SEL s = @selector(go);
