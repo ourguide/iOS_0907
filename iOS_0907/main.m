@@ -38,6 +38,21 @@
 @end
 
 @implementation Car
+@synthesize color = _color;
+// 내부의 필드의 이름을 명시적으로 지정할 수 있습니다.
+
+- (int)color {
+  printf("Getter\n");
+  return _color;
+  // return self.color; // 주의: 재귀가 발생한다.
+}
+
+- (void)setColor:(int)color {
+  printf("Setter\n");
+  _color = color;
+  // self.color = color; // 주의: 재귀가 발생한다.
+}
+
 @end
 
 // 1. dot 연산자를 이용해서, setter / getter를 호출할 수 있습니다.
