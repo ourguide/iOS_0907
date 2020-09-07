@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7A1DB1D32505CAFF001119AE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A1DB1D22505CAFF001119AE /* main.m */; };
+		7A1DB1D52505CF74001119AE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A1DB1D42505CF74001119AE /* main.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,7 +28,8 @@
 		7A1DB1CC2505B152001119AE /* 2_클래스기본문법.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "2_클래스기본문법.m"; sourceTree = "<group>"; };
 		7A1DB1CE2505BA3D001119AE /* 3_초기화메소드.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "3_초기화메소드.m"; sourceTree = "<group>"; };
 		7A1DB1D02505C647001119AE /* 4_메소드.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "4_메소드.m"; sourceTree = "<group>"; };
-		7A1DB1D22505CAFF001119AE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		7A1DB1D22505CAFF001119AE /* 5_프로퍼티.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "5_프로퍼티.m"; sourceTree = "<group>"; };
+		7A1DB1D42505CF74001119AE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,7 +66,8 @@
 				7A1DB1CC2505B152001119AE /* 2_클래스기본문법.m */,
 				7A1DB1CE2505BA3D001119AE /* 3_초기화메소드.m */,
 				7A1DB1D02505C647001119AE /* 4_메소드.m */,
-				7A1DB1D22505CAFF001119AE /* main.m */,
+				7A1DB1D22505CAFF001119AE /* 5_프로퍼티.m */,
+				7A1DB1D42505CF74001119AE /* main.m */,
 			);
 			path = iOS_0907;
 			sourceTree = "<group>";
@@ -127,7 +129,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7A1DB1D32505CAFF001119AE /* main.m in Sources */,
+				7A1DB1D52505CF74001119AE /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -246,6 +248,7 @@
 		7A1DB1C92505ABAF001119AE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = NO;
 				CODE_SIGN_STYLE = Automatic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -254,6 +257,7 @@
 		7A1DB1CA2505ABAF001119AE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = NO;
 				CODE_SIGN_STYLE = Automatic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
