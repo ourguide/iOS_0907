@@ -9,6 +9,23 @@
 //  2) arrayXXX, stringXXX: 컴파일러가 autorelease를 삽입한다.
 //                         => Auto Release Pool이 파괴되는 시점에 파괴되는 객체
 
+// 3. ARC vs MRC
+//  : ARC가 더 빠르게 동작합니다.
+//  => MRC에서는 method를 통해 참조 계수를 조작합니다.
+//     'ARC에서는 참조 계수를 조작하는 모든 코드가 C로 되어 있습니다.'
+
+@interface Person : NSObject
+@end
+@implementation Person
+
+// Override
+- (NSString *)description {
+  return @"Person - Tom";
+}
+
+@end
+
+
 int main() {
   @autoreleasepool {
     
@@ -23,6 +40,11 @@ int main() {
     
     NSArray* arr2 = [NSArray arrayWithObjects:@"A", @"B", @"C", nil];
     // [arr2 autorelease];
+    
+    NSLog(@"%@", arr2);
+    
+    Person* person = [Person new];
+    NSLog(@"%@", person);
     
   }
 }
