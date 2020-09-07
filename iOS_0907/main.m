@@ -37,4 +37,6 @@ int main() {
   [car go:100];
   [car go:100 speed:120];
   [car go:100 speed:120 color:42];
+  
+  // [car go:100 speed:120 color:42 name:@"Truck"];
 }
