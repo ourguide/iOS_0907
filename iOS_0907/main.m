@@ -9,15 +9,20 @@
 
 // 초기화 메소드
 - (id)init;
-
 - (id)initWithColor:(int)color;
 
+// 객체가 파괴되는 시점에 호출되는 함수입니다.
+- (void)dealloc;
 
 - (int)color;
 
 @end
 
 @implementation Car
+
+- (void)dealloc {
+  printf("Dealloc!\n");
+}
 
 - (int)color {
   return _color;
@@ -87,6 +92,12 @@
 // 객체의 메모리 할당과 초기화 메소드를 직접 호출해야 한다.
 //  => 2단계 생성 패턴
 
+// ObjC는 메모리 관리가 컴파일러에 의해 삽입된 코드에 의해 관리됩니다.
+// => ARC(Auto Reference Counting)
+// => MRC(Manual Reference Counting)
+
+// => VM(Virtual Machine) - Deprecated
+
 int main() {
   // Car* car = [Car new];
   Car* car = [[Car alloc] init];
@@ -95,8 +106,11 @@ int main() {
   Car* car2 = [[Car alloc] initWithColor:100];
   printf("%d\n", [car2 color]);
   
-  Truck* truck = [[Truck alloc] initWithSpeed:42 color:100];
+  // Truck* truck = [[Truck alloc] initWithSpeed:42 color:100];
+  Truck* truck = nil;
+  printf("%d\n", [truck color]); // ?
   
+  // nil객체에 메소드를 호출하면, 크래시가 발생하지 않는다.
 }
 
 
