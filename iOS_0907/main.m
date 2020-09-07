@@ -44,8 +44,23 @@
 @end
 
 // * 편의 생성자를 통해 생성되는 객체들은 Auto Release Pool을 통해 수명을 관리하자.
+// => 프로그램 내에는 반드시 1개의 autoreleasepool이 존재해야 한다.
 
 int main() {
+  
+  @autoreleasepool { // [[NSAutoreleasePool alloc] init];
+  
+    @autoreleasepool {
+        Car* blueCar = [Car blueCar];
+    }
+    
+    printf("------blueCar-----\n");
+    Car* redCar = [Car redCar];
+    
+  } // [pool release];
+  
+
+#if 0
   NSAutoreleasePool* pool = [[NSAutoreleasePool alloc] init]; // pool 생성
   
   Car* blueCar = [Car blueCar];
@@ -53,6 +68,7 @@ int main() {
   
   [pool release];
   // pool에 등록된 모든 객체에 대해서, release를 보낸다.
+#endif
   
   
 #if 0
