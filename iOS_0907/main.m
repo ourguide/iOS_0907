@@ -24,10 +24,25 @@ class Car {
 @protected
 }
 
+// 메소드의 선언부
+- (void)go;
+
+// 클래스 메소드의 선언부
++ (void)foo;
+
 @end
 
 // 클래스 정의부 - .m(소스 파일)
 @implementation Car
+
+// 메소드의 구현부
+- (void)go {
+  printf("go - %d\n", _speed);
+}
+
++ (void)foo {
+  printf("foo\n");
+}
 
 @end
 
@@ -37,6 +52,10 @@ int main() {
   // - new: selector
   Car* car = [Car new];
   car->_speed = 42;
+  
+  // car->_color = 100;
+  [car go];
+  [Car foo];
   
   printf("%d\n", car->_speed);
 }
