@@ -12,6 +12,9 @@
 - (id)initWithFirstName:(NSString*)firstName lastName:(NSString*)lastName;
 - (id)initWithPhone:(Phone*)phone;
 
+- (NSString*)fullName;
+- (void)setFullName:(NSString*)fullName;
+
 @end
 
 // => Effective Objective C
@@ -22,6 +25,16 @@
 //   : 반드시 setter를 이용해야 한다.
 
 @implementation Person
+- (NSString*)fullName {
+  return [NSString stringWithFormat:@"%@, %@", _firstName, _lastName];
+}
+
+- (void)setFullName:(NSString *)fullName {
+  NSArray* arr = [fullName componentsSeparatedByString:@", "];
+  self.firstName = arr[0];
+  self.lastName = arr[1];
+}
+
 - (id)initWithPhone:(Phone *)phone {
   self = [super init];
   
@@ -57,11 +70,18 @@
 
 
 int main() {
-  Phone* phone = [Phone new];
-  Person* person = [[Person alloc] initWithPhone:phone];
-  phone = nil;
+  // Phone* phone = [Phone new];
+  // Person* person = [[Person alloc] initWithPhone:phone];
+  // phone = nil;
+
+  // printf("Main end...\n");
   
-  printf("Main end...\n");
+  Person* person = [[Person alloc] initWithFirstName:@"Gildong" lastName:@"Hong"];
+  NSLog(@"%@", person.fullName);
+  
+  person.fullName = @"Soonsin, Lee";
+  NSLog(@"%@", person.fullName);
+  NSLog(@"%@, %@", person.firstName, person.lastName);
 }
 
 
