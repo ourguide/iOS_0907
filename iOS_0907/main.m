@@ -82,13 +82,16 @@ int main() {
   if ([car isKindOfClass:[Car class]]) {
     printf("Car의 자식입니다.\n");
   }
-  
-  
   // Java: instanceOf
   // if (car instanceOf Car) { -> true
   
+  //  2) 동적 생성
+  // Intent intent = new Intent(this, MainActivity.class);
+  // startActivity(intent);
   
-  
+  Class carClass = [car class];
+  Car* p = [carClass new];
+  // => iOS에서 사용자가 만든 클래스를 프레임워크에서 생성할 때 사용하는 기술
   
   
   
