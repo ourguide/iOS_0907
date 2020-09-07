@@ -1,84 +1,65 @@
+
 #import <Foundation/Foundation.h>
 
-@interface Car : NSObject {
-  int _red;
-  int _green;
-  int _blue;
+// Ownership(소유권)
+//   있다: Person객체가 Phone객체를 참조하는 동안은 dealloc이 호출되지 않는다.
+//   없다: Person객체가 Phone객체를 참조하는 동안 dealloc의 가능성이 있다.
+
+@class Phone;
+@interface Person : NSObject {
+  Phone* _phone;
 }
 
-- (id)initWithRed:(int)red green:(int)green blue:(int)blue;
-
-+ (Car*)blueCar;
-+ (Car*)redCar;
+- (void)setPhone:(Phone*)phone;
 
 @end
 
-@implementation Car
+@interface Phone : NSObject
+@end
 
-// 정적 팩토리 메소드 => 편의 생성자
-//                  : 내부적으로 지정 초기화 메소드를 통해 객체를 편리하게 생성하는 클래스 메소드
-+ (Car*)blueCar {
-  return [[[Car alloc] initWithRed:0 green:0 blue:255] autorelease]; // !!
-}
-
-+ (Car*)redCar {
-  return [[[Car alloc] initWithRed:255 green:0 blue:0] autorelease];
-}
-
-- (id)initWithRed:(int)red green:(int)green blue:(int)blue {
-  self = [super init];
-  if (self) {
-    _red = red;
-    _green = green;
-    _blue = blue;
-  }
-  return self;
-}
+@implementation Person
 
 - (void)dealloc {
-  printf("Car 객체 파괴..\n");
+  // 자신이 소유한 객체의 참조 계수를 감소해야 한다.
+  [_phone release];
   
   [super dealloc];
 }
 
-@end
-
-// * 편의 생성자를 통해 생성되는 객체들은 Auto Release Pool을 통해 수명을 관리하자.
-// => 프로그램 내에는 반드시 1개의 autoreleasepool이 존재해야 한다.
-
-int main() {
+// 소유권이 있다.
+- (void)setPhone:(Phone*)phone {
   
-  @autoreleasepool { // [[NSAutoreleasePool alloc] init];
-  
-    @autoreleasepool {
-        Car* blueCar = [Car blueCar];
-    }
-    
-    printf("------blueCar-----\n");
-    Car* redCar = [Car redCar];
-    
-  } // [pool release];
-  
-
-#if 0
-  NSAutoreleasePool* pool = [[NSAutoreleasePool alloc] init]; // pool 생성
-  
-  Car* blueCar = [Car blueCar];
-  Car* redCar = [Car redCar];
-  
-  [pool release];
-  // pool에 등록된 모든 객체에 대해서, release를 보낸다.
-#endif
-  
-  
-#if 0
-  Car* blueCar = [[Car alloc] initWithRed:0
-                                    green:0
-                                     blue:255];
-  
-  Car* redCar = [[Car alloc] initWithRed:255
-                                   green:0
-                                    blue:0];
-#endif
+  if (_phone != phone) {
+    // 1. 기존 객체의 참조 계수를 감소해야 한다.
+    [_phone release];
+    // 2. 새로운 객체를 대입한다.
+    _phone = phone;
+    // 3. 새로운 객체의 참조 계수를 증가한다.
+    [_phone retain];
+  }
 }
 
+// 소유권이 없다.
+#if 0
+- (void)setPhone:(Phone*)phone {
+  _phone = phone;
+}
+#endif
+
+@end
+
+@implementation Phone
+@end
+
+int main() {
+  Person* person = [Person new];
+  Phone* phone = [Phone new];  // 1
+  
+  person.phone = phone; // [person setPhone:phone]
+  [phone release]; // Phone의 dealloc이 호출된다.
+  
+  // person이 phone을 이용한다.
+  printf("person이 phone을 이용한다.\n"); // - Crash
+  
+  [person release];
+}
