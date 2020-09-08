@@ -39,17 +39,17 @@
 int main() {
   // 1) 객체 생성시 참조 계수는 1 입니다.
   Car* p1 = [Car new];
-  printf("Ref count: %ld\n", [p1 retainCount]);
+  printf("Ref count: %ld\n", [p1 retainCount]);  // 1
   
   // 2) 객체의 포인터 대입 후, 참조 계수는 증가해야 합니다.
   Car* p2 = p1;
   [p2 retain];
-  printf("Ref count: %ld\n", [p1 retainCount]);
+  printf("Ref count: %ld\n", [p1 retainCount]);  // 2
   
   [p1 release];
-  printf("Ref count: %ld\n", [p1 retainCount]);
+  printf("Ref count: %ld\n", [p1 retainCount]);  // 1
   
-  [p2 release];
+  [p2 release];                                  // 1 -> 0 (dealloc)
   // printf("Ref count: %ld\n", [p2 retainCount]);
   
   printf("main end...\n");

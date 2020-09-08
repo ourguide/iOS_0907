@@ -18,16 +18,34 @@
 @end
 @implementation Person
 
+// AutoReleasePool
+- (Person*)personNamed:(NSString*)name {
+  //                     initWithName: name];
+  return [[Person alloc] init];
+}
+
 // Override
 - (NSString *)description {
   return @"Person - Tom";
 }
 
+- (void)dealloc {
+  printf("Person dealloc\n");
+}
+
 @end
+
+void foo(Person* p1, Person* p2) {
+  
+}
 
 
 int main() {
   @autoreleasepool {
+    
+    foo([[Person alloc] init], [Person personNamed:@"Tom"]);
+    //  [[Person alloc] init]: foo 함수가 끝나는 시점에 파괴
+    //  [Person personNamed:@"Tom"]: AutoReleasePool이 파괴되는 시점에 파괴
     
     // 문자열을 생성하는 3가지 방법
     NSString* s1 = @"Hello";     // Literal

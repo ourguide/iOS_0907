@@ -20,7 +20,7 @@
 
 @implementation Person
 - (void)dealloc {
-  // [_phone release];
+  // [_phone release]; // - retain으로 지정했을 경우 반드시 작성해야 한다.
   
   [super dealloc];
 }

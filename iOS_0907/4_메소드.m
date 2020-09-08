@@ -1,14 +1,32 @@
 // 메소드
 #import <Foundation/Foundation.h>
 
+//----
+class Car {
+public:
+  void go();
+  void go(int a);
+  void go(int a, int speed);
+  void go(int a, int speed, int color);
+  // C++ -> Name Mangling
+}
+//----
+
 @interface Car : NSObject
 
+// go
 - (void)go;
+
+// go:
 - (void)go:(int)a;
 
+// go:speed:
 - (void)go:(int)a speed:(int)speed;
+
+// go:speed:color:
 - (void)go:(int)a speed:(int)speed color:(int)color;
 
+// go:speed:color:name:
 - (void)go:(int)a speed:(int)speed color:(int)color name:(NSString*)name;
 
 @end

@@ -6,10 +6,10 @@
 
 // ARC - 프로퍼티 소유권
 // MRC
-// retain      ->       strong(소유권이 있다)
+// retain             ->  strong(소유권이 있다) [default]
 // @property(strong) Phone* phone;
 
-// assign      ->       weak(소유권이 없음)
+// assign[default]    ->  weak(소유권이 없음)
 @property(weak) Phone* phone;
 // 1) Setter에서 참조 계수를 증가하지 않는다.
 // 2) 참조하는 객체가 파괴되었을 경우, 참조변수의 값을 nil로 바꿔준다.
@@ -18,7 +18,7 @@
 //             ->       unsafe_unretained
 
 // copy        ->       copy
-//  : 복제본을 만든다.
+//  : 복제본을 만든다.(소유)
 
 @property(assign) int age;
 

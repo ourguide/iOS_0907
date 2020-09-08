@@ -24,6 +24,7 @@ class Car {
 @protected
 }
 
+// Obj C는 메소드에 접근 지정레벨을 제공할 수 없습니다.
 // 메소드의 선언부
 - (void)go;
 
@@ -31,6 +32,8 @@ class Car {
 + (void)foo;
 
 @end
+
+// #import "XXX.h"
 
 // 클래스 정의부 - .m(소스 파일)
 @implementation Car
