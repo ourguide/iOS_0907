@@ -1,88 +1,47 @@
-
 import Foundation
 
-// 초기화 메소드
-// 1. 객체 생성시에 호출되는 함수 입니다.
-// 2. 객체 내부의 프로퍼티가 Optional이 아니면, 반드시 초기화 메소드를 통해 초기화해주어야 합니다.
+// Objective C
+//   - Reference Type: 객체
+//   - Built-in Type: int, double, char
 
-class Car {
-  var speed: Int
-  var color: Int
-  
-  // 편의 생성자 - 지정 초기화 메소드를 호출하는 초기화 메소드
-  //  : ObjC - class method
-  convenience init(speed: Int) {
-    self.init(speed: speed, color: 0)
-  }
-  
-  // 지정 초기화 메소드(Designated Initializer)
-  // : 클래스의 모든 필드를 온전히 초기화하는 초기화 메소드
-  init(speed: Int, color: Int) {
-    self.speed = speed
-    self.color = color
-  }
-}
+// Swift는 모든 것이 객체(object) 입니다.
+//  => 객체 = 속성(property) + 메소드
+//   1) Reference Type - class
+//     : 힙에 생성된다.
+//       ARC(참조 계수)에 의해 수명 관리가 된다.
 
-class Truck : Car {
+//   2) Value Type     - struct
+//     : 어떤 컨텍스트에서 생성 했는지에 따라 위치가 결정된다.
+//       스택에 생성할 경우, 메모리 생성 해지의 비용이 거의 없다.
+
+// 구조체(struct)
+struct User2 {
   var name: String
-
-  init(speed: Int, color: Int, name: String) {
-    // 1. 자신의 필드를 초기화 한다.
-    self.name = name
-    // 2. 부모의 지정 초기화 메소드를 호출한다.
-    super.init(speed: speed, color: color)
-  }
-}
-
-// - ObjC 에서는 부모가 제공하는 초기화 메소드를 상속했지만,
-//   1) 초기화를 메소드를 정의한 경우, 자식 클래스는 부모의 초기화 메소드를 상속되지 않는다.
-//   2) 초기화를 메소드를 정의하지 않은 경우, 부모가 제공하는 초기화 메소드와 편의 초기화 메소드를 상속한다.
-// let p2 = Truck(speed: 42, color: 100, name: "Tom")
-
-let p1 = Car(speed: 42)
-p1.color = 100
-
-
-class User {
-  var name: String
-  
-  // 자식 클래스가 반드시 해당 초기화 메소드를 가져야 한다. - required
-  required init(name: String) {
-    self.name = name
-  }
-}
-
-class Student : User {
   var age: Int
   
   init(name: String, age: Int) {
-    self.age = 40
-    super.init(name: name)
+    self.name = name
+    self.age = age
   }
+}
+
+class User {
+  var name: String
+  var age: Int
   
-  // 부모 클래스가 요구하는 초기화 메소드를 반드시 구현해야 한다.
-  required init(name: String) {
-    self.age = 0
-    super.init(name: name)
+  init(name: String, age: Int) {
+    self.name = name
+    self.age = age
   }
 }
 
-class Computer {
-  var price: Int
-  
-  // 실패 가능성이 있는 초기화 메소드를 제공하는 것이 가능합니다. - init?
-  init?(price: Int) {
-    if (price < 0) {
-      // 객체 생성을 실패하고 싶다.
-      return nil
-    }
-    
-    self.price = price
-  }
-}
+// 클래스 객체는 let으로 지정되도, 불변이 아니다.
+let cUser = User(name: "Tom", age: 42)
+cUser.name = "Bob"
 
-let computer: Computer? = Computer(price: -1)
-if let computer = computer {
-  print(computer.price)
-}
 
+// 구조체 객체는 let으로 지정되면, 불변이다.
+let sUser = User2(name: "Tom", age: 42)
+// sUser.name = "Bob"
+let arr1: [String] = [];  // 불변
+var arr2: [String] = [];  // 가변
