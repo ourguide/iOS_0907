@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7A5AA9F925076FDB0069A168 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A5AA9F825076FDB0069A168 /* main.swift */; };
+		7A5AA9FD250775600069A168 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A5AA9FC250775600069A168 /* main.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -27,7 +27,8 @@
 		7A5AA9ED250756D70069A168 /* 1_시작.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "1_시작.swift"; sourceTree = "<group>"; };
 		7A5AA9F4250761B50069A168 /* 2_Optional.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 2_Optional.swift; sourceTree = "<group>"; };
 		7A5AA9F625076B250069A168 /* 3_초기화메소드.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "3_초기화메소드.swift"; sourceTree = "<group>"; };
-		7A5AA9F825076FDB0069A168 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		7A5AA9F825076FDB0069A168 /* 4_구조체.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "4_구조체.swift"; sourceTree = "<group>"; };
+		7A5AA9FC250775600069A168 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,7 +64,8 @@
 				7A5AA9ED250756D70069A168 /* 1_시작.swift */,
 				7A5AA9F4250761B50069A168 /* 2_Optional.swift */,
 				7A5AA9F625076B250069A168 /* 3_초기화메소드.swift */,
-				7A5AA9F825076FDB0069A168 /* main.swift */,
+				7A5AA9F825076FDB0069A168 /* 4_구조체.swift */,
+				7A5AA9FC250775600069A168 /* main.swift */,
 			);
 			path = Swift_0907;
 			sourceTree = "<group>";
@@ -127,7 +129,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7A5AA9F925076FDB0069A168 /* main.swift in Sources */,
+				7A5AA9FD250775600069A168 /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
