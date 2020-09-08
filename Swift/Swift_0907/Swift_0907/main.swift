@@ -58,6 +58,18 @@ case .some(let value):
   print("Value - \(value)")
 }
 
+func foo(a: Int) {
+  
+}
+
+var d: Int! = 42
+foo(a: d)
+
+//    대입
+// Int  -> Int?  허용
+// Int? -> Int   허용 X
+// Int! -> Int   허용(위험하다)
+
 // var p: Person? = nil
 
 
@@ -66,7 +78,7 @@ case .some(let value):
 //  -> nil을 대입할 수 없다.
 // 2. Int?
 //  -> 값을 얻기 위해서는, if let 구문 등을 통해 체크해서 사용해야 한다.
-// 3. Int!
+// 3. Int! : 암시적 추출 타입
 //  -> nil 가능성이 있는 타입이지만, 체크를 강제하지 않는다.
 //  => 일반적으로 사용하지 않는 것이 좋다.
 //  => 체크를 강제하지 않는다.
