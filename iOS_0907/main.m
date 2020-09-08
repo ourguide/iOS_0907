@@ -7,10 +7,11 @@
 //    alloc -> allocWithZone:
 
 // 2. 불변 객체
-@interface Person : NSObject<NSCopying>
-// setter를 제공하고 싶지 않다면, readonly를 지정하면 됩니다.
 // - readwrite: getter + setter
 // - readonly: getter
+
+@interface Person : NSObject<NSCopying>
+// setter를 제공하고 싶지 않다면, readonly를 지정하면 됩니다.
 @property(strong, nonatomic, readonly) NSString* name;
 @property(assign, nonatomic, readonly) int age;
 
