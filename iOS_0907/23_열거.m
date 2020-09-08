@@ -32,11 +32,15 @@ int main() {
   }
 #endif
   
-
   NSDictionary* dic = @{
     @"name": @"Tom",
     @"age": @42
   };
+  
+  NSString* p = @"Tom";
+  [dic enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL* stop) {
+    NSLog(@"%@ -> %@, %@", key, obj, p);
+  }];
 
 #if 0
   for (id object in dic) {
