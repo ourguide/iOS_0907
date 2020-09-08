@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7A5AA9D625072C3B0069A168 /* 22_불변객체2.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A5AA9D525072C3B0069A168 /* 22_불변객체2.m */; };
+		7A5AA9D82507423E0069A168 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A5AA9D72507423E0069A168 /* main.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -47,6 +47,7 @@
 		7A5AA9D1250724990069A168 /* 20_리터럴문법.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "20_리터럴문법.m"; sourceTree = "<group>"; };
 		7A5AA9D3250728030069A168 /* 21_불변객체.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "21_불변객체.m"; sourceTree = "<group>"; };
 		7A5AA9D525072C3B0069A168 /* 22_불변객체2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "22_불변객체2.m"; sourceTree = "<group>"; };
+		7A5AA9D72507423E0069A168 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +103,7 @@
 				7A5AA9D1250724990069A168 /* 20_리터럴문법.m */,
 				7A5AA9D3250728030069A168 /* 21_불변객체.m */,
 				7A5AA9D525072C3B0069A168 /* 22_불변객체2.m */,
+				7A5AA9D72507423E0069A168 /* main.m */,
 			);
 			path = iOS_0907;
 			sourceTree = "<group>";
@@ -163,7 +165,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7A5AA9D625072C3B0069A168 /* 22_불변객체2.m in Sources */,
+				7A5AA9D82507423E0069A168 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
