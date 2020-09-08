@@ -6,6 +6,10 @@
 	objectVersion = 50;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		7A5AA9DB25074AAB0069A168 /* 24_KVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A5AA9D9250747790069A168 /* 24_KVC.m */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXCopyFilesBuildPhase section */
 		7A1DB1BF2505ABAF001119AE /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -163,6 +167,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A5AA9DB25074AAB0069A168 /* 24_KVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
