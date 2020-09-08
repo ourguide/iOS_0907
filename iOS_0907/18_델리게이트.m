@@ -10,7 +10,7 @@
 
  
 // Obj-C Protocol(Interface)
-@protocol CLLocationManagerDelegate
+@protocol CLLocationManagerDelegate<NSObject>
 @required
 - (void)updateLocation;
 @optional
@@ -34,8 +34,8 @@
   [_delegate updateLocation];
   
   // 위치 업데이트에 실패하였다.
-  id obj = _delegate;
-  if ([obj respondsToSelector:@selector(failToLocation)]) {
+  // id obj = _delegate;
+  if ([_delegate respondsToSelector:@selector(failToLocation)]) {
     [_delegate failToLocation];
   }
 }
