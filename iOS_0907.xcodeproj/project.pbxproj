@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7A5AA9DB25074AAB0069A168 /* 24_KVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A5AA9D9250747790069A168 /* 24_KVC.m */; };
+		7A5AA9DD25074E9E0069A168 /* 25_KVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A5AA9DC25074E9E0069A168 /* 25_KVO.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -49,6 +49,7 @@
 		7A5AA9D525072C3B0069A168 /* 22_불변객체2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "22_불변객체2.m"; sourceTree = "<group>"; };
 		7A5AA9D72507423E0069A168 /* 23_열거.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "23_열거.m"; sourceTree = "<group>"; };
 		7A5AA9D9250747790069A168 /* 24_KVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = 24_KVC.m; sourceTree = "<group>"; };
+		7A5AA9DC25074E9E0069A168 /* 25_KVO.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = 25_KVO.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +107,7 @@
 				7A5AA9D525072C3B0069A168 /* 22_불변객체2.m */,
 				7A5AA9D72507423E0069A168 /* 23_열거.m */,
 				7A5AA9D9250747790069A168 /* 24_KVC.m */,
+				7A5AA9DC25074E9E0069A168 /* 25_KVO.m */,
 			);
 			path = iOS_0907;
 			sourceTree = "<group>";
@@ -167,7 +169,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7A5AA9DB25074AAB0069A168 /* 24_KVC.m in Sources */,
+				7A5AA9DD25074E9E0069A168 /* 25_KVO.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
