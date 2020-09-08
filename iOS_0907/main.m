@@ -6,9 +6,13 @@
 //  - copyWithZone:
 //    alloc -> allocWithZone:
 
+// 2. 불변 객체
 @interface Person : NSObject<NSCopying>
-@property(strong, nonatomic) NSString* name;
-@property(assign, nonatomic) int age;
+// setter를 제공하고 싶지 않다면, readonly를 지정하면 됩니다.
+// - readwrite: getter + setter
+// - readonly: getter
+@property(strong, nonatomic, readonly) NSString* name;
+@property(assign, nonatomic, readonly) int age;
 
 - (instancetype)initWithName:(NSString*)name age:(int)age;
 
@@ -70,8 +74,11 @@ int main() {
   NSLog(@"%@", person);
   
   Company *company = [[Company alloc] initWithPerson:person];
+  
   //----
-  person.name = @"Bob";
+  Person *person2 = [[Person alloc] initWithName:@"Tom" age:42];
+  company.person = person2;
+  // person2.name = @"Bob";
   //----
   NSLog(@"%@", company);
 }
