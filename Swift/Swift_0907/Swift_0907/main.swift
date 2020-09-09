@@ -1,141 +1,50 @@
+
 import Foundation
 
-// 3. Closure - 80%
-class Button {
-  var onClick: (() -> Void)?
+// Dictionary<String, Any> -> JSON Object
+// {
+//   "name": "Tom",
+//   "age": 42
+// }
 
-  func click() {
-    onClick?()
+// Dictionary<String, Any> -> [String:Any]
+
+func foo(a: Int) {
+  // 기존 언어에서 빠른 탈출 구문으로 변경하기 위해서는 기존 조건의 반대로 작성해야 한다.
+  guard a > 0 && a <= 10 else {
+    return
   }
+  
+  // a
+  
 }
 
-class Dialog {
-  // ?
-  // (Dialog) -> Void
-  func close() {
-    print("Dialog close")
+
+// guard: early exit
+//   => 조건문의 중첩을 방어할 수 있다.
+
+func printJSON(_ json: [String: Any]) {
+  // 1. 키 값에 해당하는 value가 존재하지 않을 수 있기 때문에, Optional이 반환된다.
+  // let name = json["age"]! as! String
+  //           Any?! -> Any -> as! -> String
+  // print(name)
+
+  if let name = json["name"] as? String, let age = json["age"] as? Int {
+    print("\(name) \(age)")
   }
+  
+  
+  guard let name = json["name"] as? String, let age = json["age"] as? Int else {
+    return
+  }
+  
+  // Optional Binding을 지원한다.
+  print("\(name) \(age)")
 }
 
-// () -> Void
-func foo() {}
+let user: [String: Any] = [
+  "name": "Tom",
+  "age": 42
+]
 
-// var a: () -> Void = foo
-// a = Dialog.close
-// var a: (Dialog) -> Void = Dialog.close  - Swift는 허용하지 않습니다.
-//                                        => 바운드 참조를 허용합니다.
-let dialog = Dialog()
-let button = Button()
-
-var a: () -> Void = foo
-a = dialog.close
-
-button.onClick = {
-  dialog.close()
-}
-
-button.onClick = dialog.close
-button.click()
-
-#if false
-// protocol TableViewDelegate: AnyObject {
-@objc protocol TableViewDelegate {
-  @objc func tableView(_ tableView: TableView, willSelectRowAt: Int)
-  @objc func tableView(_ tableView: TableView, didSelectRowAt: Int)
-
-  @objc optional func tableView(_ tableView: TableView, willDeselectRowAt: Int)
-  @objc optional func tableView(_ tableView: TableView, didDeselectRowAt: Int)
-}
-
-class TableView: NSObject {
-  // @property(weak, nonatomic) id<TableViewDelegate> delegate;
-  weak var delegate: TableViewDelegate?
-  // 'weak' must not be applied to non-class-bound
-
-  func select(at: Int) {
-    delegate?.tableView(self, willSelectRowAt: at)
-    print("select - \(at)")
-    delegate?.tableView(self, didSelectRowAt: at)
-  }
-
-  func deselect(at: Int) {
-    delegate?.tableView?(self, willDeselectRowAt: at)
-    print("select - \(at)")
-    delegate?.tableView?(self, didDeselectRowAt: at)
-  }
-}
-
-// Non-class type 'ViewController' cannot conform to class protocol 'TableViewDelegate'
-class ViewController: TableViewDelegate {
-  func tableView(_ tableView: TableView, willSelectRowAt: Int) {
-    print("ViewController - willSelectRowAt")
-  }
-
-  func tableView(_ tableView: TableView, didSelectRowAt: Int) {
-    print("ViewController - didSelectRowAt")
-  }
-
-  func tableView(_ tableView: TableView, willDeselectRowAt: Int) {
-    print("ViewController - willDeselectRowAt")
-  }
-
-  func tableView(_ tableView: TableView, didDeselectRowAt: Int) {
-    print("ViewController - didDeselectRowAt")
-  }
-}
-
-let tableView = TableView()
-let viewController = ViewController()
-
-tableView.delegate = viewController
-
-tableView.select(at: 0)
-tableView.deselect(at: 0)
-#endif
-
-#if false
-// Cocoa Design Pattern - Event를 처리하는 기술
-// 1. Target-Action
-// 2. Delegate
-// 3. Closure
-
-// Obj C       Swift
-//  id     ->    Any, AnyObject(ObjectC) - performSelector
-//  SEL    ->    Selector
-
-// Swift -> ObjC
-// ObjC  -> Swift
-class Button {
-  var target: AnyObject?
-  var action: Selector?
-
-  func add(target: AnyObject, action: Selector) {
-    self.target = target
-    self.action = action
-  }
-
-  func click() {
-    _ = target?.perform(action, with: self)
-  }
-}
-
-class Dialog {
-  // @objc - Objective C의 메소드
-  @objc func close() {
-    print("Dialog close")
-  }
-}
-
-let button = Button()
-let dialog = Dialog()
-
-// selector - ObjC method
-button.add(target: dialog, action: #selector(Dialog.close))
-button.click()
-
-// Xcode가 Swift Formatting을 제대로 지원해주고 있지 않습니다.
-//  => SwiftFormat
-
-// Homebrew(brew.sh)
-//  : macOS Package Manager
-#endif
+printJSON(user)
