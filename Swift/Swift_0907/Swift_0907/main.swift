@@ -6,6 +6,7 @@ import Foundation
 // 2. struct - Value Type
 // 3. enum   - Value Type
 
+// 1. enum 기본 사용법
 // 연관된 항목을 묶어서 표현할 수 있는 타입입니다.
 enum School {
   case primary
@@ -36,4 +37,22 @@ func foo(school: School, gender: Gender) {
   }
 }
 
-foo(school: .middle, gender: .male)
+// foo(school: .middle, gender: .male)
+
+//-----------------------------
+
+// 2. Swift의 enum은 원시값(rawValue)을 지원합니다.
+//  - 특정 타입으로 지정된 값을 가집니다.
+//   String: 각 항목의 이름
+//   Int, Double: 첫번째 항목을 0을 기준으로 1씩 증가합니다.
+
+enum Number : String {
+  case one
+  case two
+  case three
+  case four
+}
+
+let num: Number = .two
+
+print(num.rawValue)
