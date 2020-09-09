@@ -56,3 +56,27 @@ enum Number : String {
 let num: Number = .two
 
 print(num.rawValue)
+
+// 3. 연관값(Associated Value)
+enum NetworkError {
+  case invalidParameter(String, String)
+  case timeout(Double)
+  case internalError(String)
+}
+
+// let error: NetworkError = .invalidParameter("a parameter", "잘못된 형식입니다")
+// let error: NetworkError = .timeout(3.14)
+let error: NetworkError = .internalError("서버가 구동되고 있지 않습니다.")
+
+// 연관값 처리 방법 1
+if case .invalidParameter(let param, let message) = error {
+  print("InvalidParameter - \(param)/\(message)")
+}
+
+if case let .invalidParameter(param, message) = error {
+  print("InvalidParameter - \(param)/\(message)")
+} else if case .timeout(let sec) = error {
+  print("Timeout - \(sec) seconds")
+} else if case .internalError(let message) = error {
+  print("InternalError - \(message)")
+}
