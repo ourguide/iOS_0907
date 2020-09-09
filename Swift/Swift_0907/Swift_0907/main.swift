@@ -1,16 +1,18 @@
 import Foundation
 
-protocol TableViewDelegate {
-  func tableView(_ tableView: TableView, willSelectRowAt: Int)
-  func tableView(_ tableView: TableView, didSelectRowAt: Int)
+// protocol TableViewDelegate: AnyObject {
+@objc protocol TableViewDelegate {
+  @objc func tableView(_ tableView: TableView, willSelectRowAt: Int)
+  @objc func tableView(_ tableView: TableView, didSelectRowAt: Int)
 
-  func tableView(_ tableView: TableView, willDeselectRowAt: Int)
-  func tableView(_ tableView: TableView, didDeselectRowAt: Int)
+  @objc optional func tableView(_ tableView: TableView, willDeselectRowAt: Int)
+  @objc optional func tableView(_ tableView: TableView, didDeselectRowAt: Int)
 }
 
-class TableView {
+class TableView: NSObject {
   // @property(weak, nonatomic) id<TableViewDelegate> delegate;
-  var delegate: TableViewDelegate?
+  weak var delegate: TableViewDelegate?
+  // 'weak' must not be applied to non-class-bound
 
   func select(at: Int) {
     delegate?.tableView(self, willSelectRowAt: at)
@@ -19,12 +21,13 @@ class TableView {
   }
 
   func deselect(at: Int) {
-    delegate?.tableView(self, willDeselectRowAt: at)
+    delegate?.tableView?(self, willDeselectRowAt: at)
     print("select - \(at)")
-    delegate?.tableView(self, didDeselectRowAt: at)
+    delegate?.tableView?(self, didDeselectRowAt: at)
   }
 }
 
+// Non-class type 'ViewController' cannot conform to class protocol 'TableViewDelegate'
 class ViewController: TableViewDelegate {
   func tableView(_ tableView: TableView, willSelectRowAt: Int) {
     print("ViewController - willSelectRowAt")
