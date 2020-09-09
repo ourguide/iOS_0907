@@ -2,14 +2,14 @@
 #import <UIKit/UIKit.h>
 #import "AppDelegate.h"
 
-//int main(int argc, char * argv[]) {
-//  NSString * appDelegateClassName;
-//  @autoreleasepool {
-//      // Setup code that might create autoreleased objects goes here.
-//      appDelegateClassName = NSStringFromClass([AppDelegate class]);
-//  }
-//  return UIApplicationMain(argc, argv, nil, appDelegateClassName);
-//}
+int main(int argc, char * argv[]) {
+  NSString * appDelegateClassName;
+  @autoreleasepool {
+      // Setup code that might create autoreleased objects goes here.
+      appDelegateClassName = NSStringFromClass([AppDelegate class]);
+  }
+  return UIApplicationMain(argc, argv, nil, appDelegateClassName);
+}
 
 // 1. iOS도 시작도 main 입니다.
 // 2. UIApplicationMain
@@ -20,12 +20,11 @@
 //         - Class객체를 이용해서 사용자 정의 객체를 생성한다.
 //         - UIApplication 객체의 delegate로 AppDelegate를 등록합니다.
 
-int main(int argc, char * argv[]) {
-  printf("Hello, iOS\n");
-
-  // main에서 auto release pool을 하나 생성해야 합니다.
-  @autoreleasepool {
-  
-    return UIApplicationMain(argc, argv, nil, @"AppDelegate");
-  }
-}
+//int main(int argc, char * argv[]) {
+//  printf("Hello, iOS\n");
+//
+//  // main에서 auto release pool을 하나 생성해야 합니다.
+//  @autoreleasepool {
+//    return UIApplicationMain(argc, argv, nil, @"AppDelegate");
+//  }
+//}
