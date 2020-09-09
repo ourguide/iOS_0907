@@ -33,7 +33,6 @@ func printJSON(_ json: [String: Any]) {
     print("\(name) \(age)")
   }
   
-  
   guard let name = json["name"] as? String, let age = json["age"] as? Int else {
     return
   }
