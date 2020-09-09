@@ -45,6 +45,11 @@ func sort(_ x: inout [Int], comparator: (Int, Int) -> Bool) {
 
 var x = [1, 3, 5, 7, 9, 2, 4, 6, 8, 10]
 
+// 함수형 프로그래밍
+// - 람다(Lambda)   - 코드 블록을 참조하는 기술
+// - 클로저(Closure) - 외부의 변수를 암묵적으로 캡쳐하는 기술
+
+// Swift - 아래 기술을 '클로저'라고 부릅니다.
 // 1. 기존 함수를 참조하는 것이 가능하다.
 sort(&x, comparator: compare2)
 
