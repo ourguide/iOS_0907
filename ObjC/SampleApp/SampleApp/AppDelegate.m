@@ -23,6 +23,13 @@
 //            - UIViewController(rootViewController)
 //               - UIView
 
+
+- (BOOL)application:(UIApplication *)application
+didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+  return YES;
+}
+
+/*
 - (BOOL)application:(UIApplication *)application
 didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
   // Override point for customization after application launch.
@@ -37,7 +44,13 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
   _window.backgroundColor = UIColor.whiteColor;
   
   // _window.rootViewController = [[ViewController alloc] init];
-  _window.rootViewController = [[FirstController alloc] init];
+  
+  // - xib 파일명이 동일한 경우
+  // _window.rootViewController = [[FirstController alloc] init];
+  
+  // - xib 파일명이 동일하지 않은 경우
+  _window.rootViewController = [[FirstController alloc]
+                                initWithNibName:@"MyView" bundle:nil];
   
   
   // 3. window 등록하고 표시
@@ -45,6 +58,7 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
   
   return YES;
 }
+*/
 
 
 /*
