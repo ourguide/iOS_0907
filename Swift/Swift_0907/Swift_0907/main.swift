@@ -1,80 +1,53 @@
 import Foundation
 
-// Property
-// 1. readwrite - var: getter + setter
-//    readonly  - let: getter
-// 2. atomic / nonatomic 동기화 관련 속성은 더 이상 지원하지 않습니다.
-// 3. strong: let a: String
-//      weak: weak let a: String
-// 4. 프로퍼티 종류
-//    1. 저장(Stored) 프로퍼티: Backing Field가 생성되는 프로퍼티
-//    2. 연산(Computed) 프로퍼티: Backing Field가 생성되지 않는 프로퍼티
-//                   접근자 메소드만 존재하는 프로퍼티
-/*     - var
-//    3. 타입 프로퍼티: static field
- 
-@property(nonatomic, strong) int age;
-// => _age: Backing 필드
-//    getter / setter
-*/
+// 함수형 프로그래밍
+// 1. Swift 에서는 함수의 인자가 let으로 전달된다.
+// 2. inout
+//    - 함수를 통해 인자에 부수효과를 필요로 하는 경우 사용한다.
+func swap(_ a:inout Int, _ b:inout Int) {
+  let temp = a
+  a = b
+  b = temp
+}
 
-class User {
-  // static final String
-  static let typeName = "User"
-  
-  var firstName: String
-  
-  // 저장 프로퍼티에 대해서는 getter / setter를 재정의하기 위해서는 별도의 저장 프로퍼티를 제공해야 한다.
-  var _lastName: String
-  var lastName: String {
-    get {
-      return _lastName
+// var a = 10
+// var b = 20
+// swap(&a, &b)   // inout => &를 붙여서 전달해야 한다.
+
+// Array<Int>        -> [Int]
+// Map<String, Int>  -> [String:Int]
+
+// for (int i = 0 ; i < n - 1; i++)
+
+// 스위프트는 함수의 시그니처에 의해서 함수의 타입이 결정됩니다.
+//      => 인자정보, 반환타입
+
+// (Int, Int) -> Bool
+func compare1(_ a: Int, _ b: Int) -> Bool {
+  return a > b
+}
+
+// (Int, Int) -> Bool
+func compare2(_ a: Int, _ b: Int) -> Bool {
+  return a < b
+}
+
+
+func sort(_ x:inout [Int], comparator: (Int, Int) -> Bool) {
+  for i in 0..<x.count-1 {
+    for j in i+1..<x.count {
+      // if x[i] > x[j] {
+      if comparator(x[i], x[j]) {
+        x.swapAt(i, j)
+      }
     }
-    set {
-      _lastName = newValue
-    }
-  }
-  
-  // 연산형 프로퍼티 - Backing field가 존재하지 않기 때문에, 초기화 메소드를 통해 초기화할 필요가 없다.
-  // - 연산형 프로퍼티는 var로 제공한다.
-  var fullName: String {
-    get {
-        return "\(firstName) \(lastName)"
-    }
-    // set(value) {
-    set {
-      // setter에 인자를 지정하지 않으면, newValue라는 이름을 통해 전달된다.
-      let arr = newValue.split(separator: " ")
-      firstName = "\(arr[0])"
-      lastName = "\(arr[1])"
-    }
-  }
-  
-  init(firstName: String, lastName: String) {
-    self.firstName = firstName
-    self._lastName = lastName
   }
 }
 
-let user = User(firstName: "Gildong", lastName: "Hong")
-user.fullName = "Soonshin Lee"
-// print(user.fullName)
-// print(User.typeName)
+var x = [ 1, 3, 5, 7, 9, 2, 4, 6, 8, 10 ]
+sort(&x, comparator: compare2)
 
-class Image {
-  init() {
-    print("Image 객체 생성 - 느리다")
-  }
-}
+print(x)
 
-// lazy var: 지연 초기화
-class Person {
-  lazy var image: Image = Image()
-  // 객체가 생성되는 시점에 초기화 하는 것이 아니라, 처음 접근되는 시점에 초기화하는 것이 좋다.
-  // => 지연 초기화
-}
 
-print("프로그램 시작")
-let p = Person()
-print("Person 객체 생성")
-print(p.image)
+
