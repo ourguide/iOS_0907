@@ -36,7 +36,9 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
   self.window = [[UIWindow alloc] initWithFrame:rect];
   _window.backgroundColor = UIColor.whiteColor;
   
-  _window.rootViewController = [[ViewController alloc] init];
+  // _window.rootViewController = [[ViewController alloc] init];
+  _window.rootViewController = [[FirstController alloc] init];
+  
   
   // 3. window 등록하고 표시
   [_window makeKeyAndVisible];
