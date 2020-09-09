@@ -1,5 +1,33 @@
 import Foundation
 
+// 3. Closure - 80%
+class Button {
+  var onClick: (() -> Void)?
+  
+  func click() {
+    onClick?()
+  }
+}
+
+class Dialog {
+  func close() {
+    print("Dialog close")
+  }
+}
+
+let button = Button()
+let dialog = Dialog()
+
+button.onClick = {
+  dialog.close()
+}
+
+button.click()
+
+
+
+
+#if false
 // protocol TableViewDelegate: AnyObject {
 @objc protocol TableViewDelegate {
   @objc func tableView(_ tableView: TableView, willSelectRowAt: Int)
@@ -53,7 +81,7 @@ tableView.delegate = viewController
 
 tableView.select(at: 0)
 tableView.deselect(at: 0)
-
+#endif
 
 
 #if false
