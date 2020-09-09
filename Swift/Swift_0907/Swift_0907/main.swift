@@ -73,4 +73,23 @@ sort(&x) {
   $0 < $1
 }
 
+// 6. 타입을 명시적으로 지정한다.
+sort(&x) { (a: Int, b: Int) -> Bool in
+  a > b
+}
+
 print(x)
+
+let arr = [ "Tom", "Bob", "Alice" ]
+
+// map(tranform) - 배열 내부의 요소의 값을 변환해서 새로운 컬렉션을 생성한다.
+// filter         - 배열 요소 중 조건에 부합되지 않는 요소는 필터한다.
+let result = arr.map { e -> Int in
+  e.count
+}.filter { e -> Bool in
+  e >= 5
+}
+
+print(result)
+
+
