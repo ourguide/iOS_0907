@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j6l-nh-ORz">
-                                <rect key="frame" x="102" y="349" width="171" height="111"/>
+                                <rect key="frame" x="102" y="350" width="171" height="111"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="Touch me"/>
@@ -33,10 +33,14 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="addButton" destination="j6l-nh-ORz" id="wPn-FR-JRE"/>
+                        <outlet property="countLabel" destination="cWX-8w-GSr" id="n4b-a3-l0e"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1104.8" y="116.49175412293854"/>
+            <point key="canvasLocation" x="-666" y="103"/>
         </scene>
     </scenes>
 </document>
