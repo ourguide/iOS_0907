@@ -3,7 +3,7 @@ import Foundation
 
 // 초기화 메소드
 // 1. 객체 생성시에 호출되는 함수 입니다.
-// 2. 객체 내부의 프로퍼티가 Optional이 아니면, 반드시 초기화 메소드를 통해 초기화해주어야 합니다.
+// 2. class 객체 내부의 프로퍼티가 Optional이 아니면, 반드시 초기화 메소드를 통해 초기화해주어야 합니다.
 
 class Car {
   var speed: Int

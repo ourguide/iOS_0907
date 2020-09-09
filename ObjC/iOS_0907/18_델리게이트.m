@@ -10,6 +10,7 @@
 
  
 // Obj-C Protocol(Interface)
+// XXXDelegate, XXXDataSource
 @protocol CLLocationManagerDelegate<NSObject>
 @required
 - (void)updateLocation;

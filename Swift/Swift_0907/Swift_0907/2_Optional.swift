@@ -54,6 +54,7 @@ var p: Optional<Person> = Person()
 switch p {
 case .none:
   print("Nil 입니다")
+  // fallthrough
 case .some(let value):
   print("Value - \(value)")
 }

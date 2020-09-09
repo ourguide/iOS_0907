@@ -13,7 +13,8 @@ int main() {
   // : _Nonnull, _Nullable
   
   [arr enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL* stop) {
-      NSLog(@"%lu - %@", idx, obj);
+    NSLog(@"%lu - %@", idx, obj);
+    *stop = true; // break
   }];
   
 #if 0

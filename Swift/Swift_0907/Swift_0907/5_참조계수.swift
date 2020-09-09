@@ -19,7 +19,7 @@ p2 = nil               // 1 -> 0  => deinit!
 print("3....")
 
 class Node {
-  unowned var next: Node?
+  weak var next: Node?
   // 약한 참조
   //  - autoniling
   //  - weak 프로퍼티는 반드시 Optional 이어야 합니다.
