@@ -68,7 +68,7 @@ enum NetworkError {
 // let error: NetworkError = .timeout(3.14)
 let error: NetworkError = .internalError("서버가 구동되고 있지 않습니다.")
 
-// 연관값 처리 방법 1
+// 연관값 처리 방법 1 - if case
 if case .invalidParameter(let param, let message) = error {
   print("InvalidParameter - \(param)/\(message)")
 }
@@ -78,5 +78,15 @@ if case let .invalidParameter(param, message) = error {
 } else if case .timeout(let sec) = error {
   print("Timeout - \(sec) seconds")
 } else if case .internalError(let message) = error {
+  print("InternalError - \(message)")
+}
+
+// 처리 방법 2 - switch / case
+switch error {
+case let .invalidParameter(param, message):
+  print("InvalidParameter - \(param)/\(message)")
+case let .timeout(sec):
+  print("Timeout - \(sec) seconds")
+case let .internalError(message):
   print("InternalError - \(message)")
 }
