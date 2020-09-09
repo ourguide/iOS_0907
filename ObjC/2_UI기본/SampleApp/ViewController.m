@@ -13,11 +13,18 @@
   
   self.count = 0;
   
-  [_addButton addTarget:self action:@selector(touched) forControlEvents:UIControlEventTouchUpInside];
-  
+//  [_addButton addTarget:self action:@selector(touched) forControlEvents:UIControlEventTouchUpInside];
 }
 
-- (void)touched {
+// #define IBAction void
+
+- (IBAction)foo:(id)sender {
+  self.count++;
+  
+  [_countLabel setText:[NSString stringWithFormat:@"%d", _count]];
+}
+
+- (IBAction)touched:(id)sender {
   self.count++;
   
   [_countLabel setText:[NSString stringWithFormat:@"%d", _count]];
