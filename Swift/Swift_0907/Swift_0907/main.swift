@@ -58,7 +58,23 @@ class User {
 
 let user = User(firstName: "Gildong", lastName: "Hong")
 user.fullName = "Soonshin Lee"
-print(user.fullName)
+// print(user.fullName)
+// print(User.typeName)
 
-print(User.typeName)
+class Image {
+  init() {
+    print("Image 객체 생성 - 느리다")
+  }
+}
 
+// lazy var: 지연 초기화
+class Person {
+  lazy var image: Image = Image()
+  // 객체가 생성되는 시점에 초기화 하는 것이 아니라, 처음 접근되는 시점에 초기화하는 것이 좋다.
+  // => 지연 초기화
+}
+
+print("프로그램 시작")
+let p = Person()
+print("Person 객체 생성")
+print(p.image)
