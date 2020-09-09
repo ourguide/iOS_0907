@@ -55,7 +55,7 @@ sort(&x, comparator: compare2)
 
 // 2. 코드 조각(람다)을 전달하는 것도 가능합니다.
 sort(&x, comparator: { a, b in
-  a < b
+  return a < b
 })
 
 // 3. 만약 전달되는 코드 블록의 한줄이라면, return을 생략할 수 있다.

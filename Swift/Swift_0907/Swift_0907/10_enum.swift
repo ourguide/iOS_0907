@@ -75,11 +75,11 @@ if case .invalidParameter(let param, let message) = error {
 
 if case let .invalidParameter(param, message) = error {
   print("InvalidParameter - \(param)/\(message)")
-} else if case .timeout(let sec) = error {
+} else if case let .timeout(sec) = error {
   print("Timeout - \(sec) seconds")
-} else if case .internalError(let message) = error {
+} else if case let .internalError(message) = error {
   print("InternalError - \(message)")
-}
+}z
 
 // 처리 방법 2 - switch / case
 switch error {

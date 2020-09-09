@@ -1,5 +1,6 @@
 import Foundation
 
+// POP: Protocol Oriendted Programming
 // 객체가 참조 타입이든 값 타입이든 상관없이 다형성을 구현하는 것이 가능하다.
 protocol UserProtocol {
   // 프로토콜을 구현하는 모든 클래스는 name 프로퍼티에 대해서 getter를 제공해야 한다.
@@ -78,8 +79,7 @@ extension UIColor {
   static func random() -> UIColor {
     return UIColor()
   }
-  
-  
+
 }
 
 let color = UIColor.random()

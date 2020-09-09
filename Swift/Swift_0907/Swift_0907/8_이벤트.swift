@@ -60,7 +60,7 @@ class TableView: NSObject {
 
   func deselect(at: Int) {
     delegate?.tableView?(self, willDeselectRowAt: at)
-    print("select - \(at)")
+    print("deselect - \(at)")
     delegate?.tableView?(self, didDeselectRowAt: at)
   }
 }
