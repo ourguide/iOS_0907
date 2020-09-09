@@ -25,12 +25,13 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
   self.window = [[UIWindow alloc] initWithFrame:rect];
   _window.backgroundColor = UIColor.whiteColor;
  
+  UIButton* button = [[UIButton alloc] initWithFrame:CGRectMake(10, 10, 250, 48)];
+  button.backgroundColor = UIColor.greenColor;
   
+  [_window addSubview:button];
   
-  
-  
-  
-  
+  UISlider* slider = [[UISlider alloc] initWithFrame:CGRectMake(10, 350, 250, 48)];
+  [_window addSubview:slider];
   
   // 이 코드가 없으면, 예외가 발생합니다.
   _window.rootViewController = [UIViewController new];
