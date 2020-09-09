@@ -35,6 +35,29 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
   self.window = [[UIWindow alloc] initWithFrame:rect];
   _window.backgroundColor = UIColor.whiteColor;
   
+  // _window.rootViewController = [[FirstController alloc] init];
+  
+  // 3. window 등록하고 표시
+  [_window makeKeyAndVisible];
+  
+  return YES;
+}
+
+
+/*
+- (BOOL)application:(UIApplication *)application
+didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+  // Override point for customization after application launch.
+  printf("App이 시작되었음\n");
+  
+  // 1. 화면 해상도를 얻어온다.
+  UIScreen* screen = [UIScreen mainScreen];
+  CGRect rect = [screen bounds];
+  
+  // 2. window 생성
+  self.window = [[UIWindow alloc] initWithFrame:rect];
+  _window.backgroundColor = UIColor.whiteColor;
+  
   _window.rootViewController = [[FirstController alloc] init];
   
   // 3. window 등록하고 표시
@@ -42,6 +65,7 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
   
   return YES;
 }
+*/
 
 
 /*
