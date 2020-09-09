@@ -3,29 +3,39 @@ import Foundation
 // 3. Closure - 80%
 class Button {
   var onClick: (() -> Void)?
-  
+
   func click() {
     onClick?()
   }
 }
 
 class Dialog {
+  // ?
+  // (Dialog) -> Void
   func close() {
     print("Dialog close")
   }
 }
 
-let button = Button()
+// () -> Void
+func foo() {}
+
+// var a: () -> Void = foo
+// a = Dialog.close
+// var a: (Dialog) -> Void = Dialog.close  - Swift는 허용하지 않습니다.
+//                                        => 바운드 참조를 허용합니다.
 let dialog = Dialog()
+let button = Button()
+
+var a: () -> Void = foo
+a = dialog.close
 
 button.onClick = {
   dialog.close()
 }
 
+button.onClick = dialog.close
 button.click()
-
-
-
 
 #if false
 // protocol TableViewDelegate: AnyObject {
@@ -82,7 +92,6 @@ tableView.delegate = viewController
 tableView.select(at: 0)
 tableView.deselect(at: 0)
 #endif
-
 
 #if false
 // Cocoa Design Pattern - Event를 처리하는 기술
