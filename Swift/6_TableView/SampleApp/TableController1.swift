@@ -17,8 +17,12 @@ class TableController1: UIViewController {
 
     // Do any additional setup after loading the view.
     // tableView가 사용할, Custom cell의 nib를 등록한다.
-    tableView.register(UINib(nibName: "MyCell", bundle: nil), forCellReuseIdentifier: "MyCell")
+    // tableView.register(UINib(nibName: "MyCell", bundle: nil), forCellReuseIdentifier: "MyCell")
     
+    //                                 Swift
+    // [UITableViewCell class] -> UITableViewCell.self
+    
+    tableView.register(UITableViewCell.self, forCellReuseIdentifier: "MyCell")
   }
 }
 
@@ -75,6 +79,17 @@ extension TableController1: UITableViewDataSource {
     return cell!
   }
 #endif
+  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    // 1. UITableView에서 활용 가능한 View가 있는지 요청한다.
+    let cell = tableView.dequeueReusableCell(withIdentifier: "MyCell", for: indexPath)
+    
+    cell.textLabel?.text = "\(indexPath)"
+    cell.detailTextLabel?.text = "Detail text label...."
+    cell.accessoryType = .disclosureIndicator
+    cell.imageView?.image = UIImage(named: "logo")
+    
+    return cell
+  }
   
   /*
     // 1. CustomCell을 xib 기반으로 생성한다.
@@ -99,6 +114,8 @@ extension TableController1: UITableViewDataSource {
       return cell!
     }
    */
+  
+  /*
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let reuseIdentifier = "MyCell"
     
@@ -112,4 +129,5 @@ extension TableController1: UITableViewDataSource {
     
     return cell
   }
+  */
 }
