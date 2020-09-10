@@ -36,6 +36,15 @@ extension TableController1: UITableViewDataSource {
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return 30
   }
+  
+  
+  // iOS Device
+  //  SE2: 667 x 375(개발)
+  //       1334 x 750(레티나 디스플레이)
+  
+  // 32x32 - logo.png
+  // 64x64 - logo@2x.png
+  // 96x96 - logo@3x.png
 
   // 데이터의 수 만큼 뷰를 생성하는 것이 아니라, 화면에 필요한만큼만 뷰를 생성하고, 재활용해야 한다.
   //  Android - view holder pattern
@@ -47,13 +56,20 @@ extension TableController1: UITableViewDataSource {
     
     // 2. 재활용 가능한 view가 없으면, nil을 반환한다.
     if (cell == nil) {
-      cell = UITableViewCell(style: .default, reuseIdentifier: "MyCell")
+      cell = UITableViewCell(style: .subtitle, reuseIdentifier: "MyCell")
       print("Cell이 새로 생성되었다.")
     } else {
       print("Cell이 재활용되었다.")
     }
     
     cell?.textLabel?.text = "\(indexPath)"
+    cell?.detailTextLabel?.text = "Detail text label...."
+    cell?.accessoryType = .disclosureIndicator
+    // cell?.imageView?.image = UIImage(named: "logo.png")
+    
+    // Assets.xcassets
+    cell?.imageView?.image = UIImage(named: "logo")
+    
     return cell!
   }
 }
