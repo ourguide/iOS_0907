@@ -39,6 +39,7 @@
                                         </state>
                                         <connections>
                                             <action selector="open2:" destination="BYZ-38-t0r" eventType="touchUpInside" id="INI-pd-2m8"/>
+                                            <segue destination="3dU-ea-tDc" kind="show" id="yCp-Yz-R2r"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6TS-Wm-RY2">
@@ -67,7 +68,33 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-490.39999999999998" y="116.49175412293854"/>
+            <point key="canvasLocation" x="-1351" y="111"/>
+        </scene>
+        <!--Second Controller-->
+        <scene sceneID="WQC-ob-yhC">
+            <objects>
+                <viewController modalTransitionStyle="crossDissolve" id="3dU-ea-tDc" customClass="SecondController" customModule="SampleApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yqd-Gy-y9r">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aXQ-2B-vsQ">
+                                <rect key="frame" x="147" y="306" width="82" height="55"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                <state key="normal" title="close">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="f73-9K-K24"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Mni-gm-tfr"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="J0e-i1-2ut" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-505" y="107"/>
         </scene>
     </scenes>
 </document>
