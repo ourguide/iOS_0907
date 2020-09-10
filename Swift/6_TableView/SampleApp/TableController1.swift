@@ -79,7 +79,22 @@ extension TableController1: UITableViewDataSource {
   
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-      return UITableViewCell()
+    var cell: MyCell? = tableView.dequeueReusableCell(withIdentifier: "MyCell") as? MyCell
+    if (cell == nil) {
+      // cell = UITableViewCell(style: .default, reuseIdentifier: "MyCell")
+      // - XIB로부터 MyCell을 생성해야 합니다.
+      cell = Bundle.main.loadNibNamed("MyCell", owner: nil, options: nil)?[0] as? MyCell
+      //     [Any]?[0] -> Any -> as? MyCell -> MyCell?
+      // cell?.reuseIdentifier = "MyCell"
+      print("Cell이 새로 생성되었다.")
+    } else {
+      print("Cell이 재활용되었다.")
+    }
+    
+    cell?.nameLabel.text = "\(indexPath)"
+    cell?.profileImageView?.image = UIImage(named: "logo")
+  
+    return cell!
   }
   
   
