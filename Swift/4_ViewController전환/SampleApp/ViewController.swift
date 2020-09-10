@@ -54,12 +54,14 @@ class ViewController: UIViewController {
         controller.user = User(name: "Bob", age: 30)
       }
     }
-    
-    
   }
   
-  
-  @IBAction func open3(_ sender: Any) {}
+  @IBAction func open3(_ sender: Any) {
+    let controller = SecondController.create()
+    controller.user = User(name: "Bob", age: 42)
+    
+    present(controller, animated: true)
+  }
   
   @IBAction func unwind(segue: UIStoryboardSegue) {}
 }
