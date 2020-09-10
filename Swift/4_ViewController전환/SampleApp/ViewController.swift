@@ -45,6 +45,20 @@ class ViewController: UIViewController {
     performSegue(withIdentifier: "MySegue", sender: nil)
   }
   
+  // Storyboard는 controller를 프레임워크 생성합니다.
+  // 데이터를 전달하기 위해서는 아래 메소드의 재정의가 필요합니다.
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    print("prepare - \(segue)")
+    if segue.identifier == "MySegue" {
+      if let controller = segue.destination as? SecondController {
+        controller.user = User(name: "Bob", age: 30)
+      }
+    }
+    
+    
+  }
+  
+  
   @IBAction func open3(_ sender: Any) {}
   
   @IBAction func unwind(segue: UIStoryboardSegue) {}

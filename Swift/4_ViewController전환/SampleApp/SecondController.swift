@@ -1,20 +1,13 @@
-//
-//  SecondController.swift
-//  SampleApp
-//
-//  Created by Chansik Yun on 2020/09/10.
-//  Copyright © 2020 Chansik Yun. All rights reserved.
-//
 
 import UIKit
 
 class SecondController: UIViewController {
+  var user: User?
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+  override func viewDidLoad() {
+    super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-    }
-  
-
+    // Do any additional setup after loading the view.
+    print(user)
+  }
 }
