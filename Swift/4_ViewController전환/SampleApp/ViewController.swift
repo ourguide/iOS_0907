@@ -6,11 +6,26 @@ class ViewController: UIViewController {
     // Do any additional setup after loading the view.
   }
   
+  // AppDelegate
+  //   - UIWindow
+  //      - ViewController : rootViewController
+  //                 | present
+  //                 | dismiss
+  //         - UINavtationController
+  //             - ViewController1 - rootViewController
+  //                     | pushViewController
+  //                     | popViewController
+  //                     | popToRootViewController
+  //             - ViewController2
+  //             - ViewController3
   
   @IBAction func navi1(_ sender: Any) {
+    // UINavigationController 기반으로 ViewController를 관리하고 싶다.
+    let rootController = ViewController1()
+    let naviController = UINavigationController(rootViewController: rootController)
+    naviController.modalPresentationStyle = .fullScreen
     
-    
-    
+    present(naviController, animated: true)
   }
   
 

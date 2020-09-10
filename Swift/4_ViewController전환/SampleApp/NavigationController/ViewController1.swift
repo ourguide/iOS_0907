@@ -1,30 +1,20 @@
-//
-//  ViewController1.swift
-//  SampleApp
-//
-//  Created by Chansik Yun on 2020/09/10.
-//  Copyright © 2020 Chansik Yun. All rights reserved.
-//
-
 import UIKit
 
 class ViewController1: UIViewController {
+  override func viewDidLoad() {
+    super.viewDidLoad()
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    // Do any additional setup after loading the view.
+  }
 
-        // Do any additional setup after loading the view.
-    }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+  override func touchesEnded(_ touches: Set<UITouch>,
+                             with event: UIEvent?) {
+    let controller = ViewController2()
+    
+    // navigation controller안에 포함된 모든 view controller는
+    //  - navigationController 프로퍼티가 유효합니다.
+    
+    navigationController?.pushViewController(controller,
+                                             animated: true)
+  }
 }
