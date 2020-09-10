@@ -4,7 +4,7 @@ import UIKit
 // 접근 지정 레벨(class, struct, enum, func)
 // public - 다른 모듈에서 접근 가능하다.
 // internal - 같은 모듈에서 접근 가능하다. - default
-// private - 같은 파일에서 접근 가능하다.
+// private - 같은 블록에서 접근 가능하다.
 
 struct User {
   let name: String
