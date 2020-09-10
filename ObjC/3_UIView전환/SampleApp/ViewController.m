@@ -29,7 +29,7 @@
   [UIView beginAnimations:nil context:nil];
   [UIView setAnimationDuration:1];
   
-  [UIView setAnimationTransition:UIViewAnimationTransitionFlipFromRight
+  [UIView setAnimationTransition:UIViewAnimationTransitionCurlDown
                          forView:self.view
                            cache:YES];
   
