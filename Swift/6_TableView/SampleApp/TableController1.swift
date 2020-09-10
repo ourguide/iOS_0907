@@ -30,17 +30,30 @@ class TableController1: UIViewController {
 // Protocol을 구현할 때, extension을 이용하면 영역 구분이 편리합니다.
 extension TableController1: UITableViewDataSource {
   func numberOfSections(in tableView: UITableView) -> Int {
-      return 3
+      return 1
   }
   
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return 5
+    return 30
   }
 
+  // 데이터의 수 만큼 뷰를 생성하는 것이 아니라, 화면에 필요한만큼만 뷰를 생성하고, 재활용해야 한다.
+  //  Android - view holder pattern
+  //          -> RecyclerView
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = UITableViewCell(style: .default, reuseIdentifier: "MyCell")
-    cell.textLabel?.text = "\(indexPath)"
     
-    return cell
+    // 1. UITableView에서 활용 가능한 View가 있는지 요청한다.
+    var cell = tableView.dequeueReusableCell(withIdentifier: "MyCell")
+    
+    // 2. 재활용 가능한 view가 없으면, nil을 반환한다.
+    if (cell == nil) {
+      cell = UITableViewCell(style: .default, reuseIdentifier: "MyCell")
+      print("Cell이 새로 생성되었다.")
+    } else {
+      print("Cell이 재활용되었다.")
+    }
+    
+    cell?.textLabel?.text = "\(indexPath)"
+    return cell!
   }
 }
