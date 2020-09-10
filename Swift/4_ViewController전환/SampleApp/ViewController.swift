@@ -6,6 +6,19 @@ class ViewController: UIViewController {
     // Do any additional setup after loading the view.
   }
   
+  
+  @IBAction func navi1(_ sender: Any) {
+    
+    
+    
+  }
+  
+
+  @IBAction func navi2(_ sender: Any) {
+  }
+  
+  //---------------------------------------
+  
   // XIB 기반
   // 1. Cocoa Touch class 생성 - XIB 파일 포함
   // 2. FirstController 객체 생성
@@ -72,3 +85,4 @@ class ViewController: UIViewController {
 // 1. XIB 기반
 // 2. Storyboard 기반
 // 3. Storyboard 기반 - XIB 스타일
+
