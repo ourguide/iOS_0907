@@ -41,9 +41,26 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <view contentMode="scaleToFill" id="Tfw-W3-F4W">
-                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DxX-hR-b1e">
+                            <rect key="frame" x="137.5" y="283.5" width="100" height="100"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="100" id="iFe-Jr-cX4"/>
+                                <constraint firstAttribute="width" constant="100" id="xGE-xZ-6ng"/>
+                            </constraints>
+                            <state key="normal" title="close"/>
+                            <connections>
+                                <action selector="close:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OnT-WR-t25"/>
+                            </connections>
+                        </button>
+                    </subviews>
                     <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="DxX-hR-b1e" firstAttribute="centerX" secondItem="NEA-9g-vUH" secondAttribute="centerX" id="3f0-u6-N3k"/>
+                        <constraint firstItem="DxX-hR-b1e" firstAttribute="centerY" secondItem="NEA-9g-vUH" secondAttribute="centerY" id="Ets-7B-Zvt"/>
+                    </constraints>
                     <viewLayoutGuide key="safeArea" id="NEA-9g-vUH"/>
                 </view>
             </objects>

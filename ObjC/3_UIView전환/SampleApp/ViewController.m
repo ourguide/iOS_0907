@@ -24,4 +24,19 @@
   [UIView commitAnimations];
 }
 
+- (IBAction)close:(id)sender {
+  
+  [UIView beginAnimations:nil context:nil];
+  [UIView setAnimationDuration:1];
+  
+  [UIView setAnimationTransition:UIViewAnimationTransitionFlipFromRight
+                         forView:self.view
+                           cache:YES];
+  
+  [_childView removeFromSuperview];
+  
+  [UIView commitAnimations];
+
+}
+
 @end
