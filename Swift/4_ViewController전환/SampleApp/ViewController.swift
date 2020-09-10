@@ -27,11 +27,24 @@ class ViewController: UIViewController {
     }
   }
   
+  // Storyboard 전환
+  // 1. Storyboard에서 ViewController 추가
+  // 2. Cocoa Touch class 생성 - XIB 포함 X
+  // 3. Storyboard에서 생성된 ViewController의 Custom Class로 생성된 클래스를 연결해주어야 합니다.
+  // 4. 전환
+  //     - Button -> ViewController 연결
+  //     - performSegue(withIdentifier: "MySegue", sender: nil)
+  
+  //     unwindSegue를 정의해서, Button을 exit와 연결
   @IBAction func open2(_ sender: Any) {
-    
+    performSegue(withIdentifier: "MySegue", sender: nil)
   }
   
   @IBAction func open3(_ sender: Any) {
+  }
+  
+  @IBAction func unwind(segue: UIStoryboardSegue) {
+    
   }
   
 }
