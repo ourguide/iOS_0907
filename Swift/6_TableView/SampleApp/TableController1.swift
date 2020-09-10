@@ -16,6 +16,9 @@ class TableController1: UIViewController {
     super.viewDidLoad()
 
     // Do any additional setup after loading the view.
+    // tableView가 사용할, Custom cell의 nib를 등록한다.
+    tableView.register(UINib(nibName: "MyCell", bundle: nil), forCellReuseIdentifier: "MyCell")
+    
   }
 }
 
@@ -30,13 +33,12 @@ class TableController1: UIViewController {
 // Protocol을 구현할 때, extension을 이용하면 영역 구분이 편리합니다.
 extension TableController1: UITableViewDataSource {
   func numberOfSections(in tableView: UITableView) -> Int {
-      return 1
+    return 1
   }
   
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return 30
   }
-  
   
   // iOS Device
   //  SE2: 667 x 375(개발)
@@ -51,12 +53,11 @@ extension TableController1: UITableViewDataSource {
   //  Android - view holder pattern
   //          -> RecyclerView
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    
     // 1. UITableView에서 활용 가능한 View가 있는지 요청한다.
     var cell = tableView.dequeueReusableCell(withIdentifier: "MyCell")
     
     // 2. 재활용 가능한 view가 없으면, nil을 반환한다.
-    if (cell == nil) {
+    if cell == nil {
       cell = UITableViewCell(style: .subtitle, reuseIdentifier: "MyCell")
       print("Cell이 새로 생성되었다.")
     } else {
@@ -75,27 +76,40 @@ extension TableController1: UITableViewDataSource {
   }
 #endif
   
-  // 1. CustomCell을 xib 기반으로 생성한다.
-  
-  
-  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    var cell: MyCell? = tableView.dequeueReusableCell(withIdentifier: "MyCell") as? MyCell
-    if (cell == nil) {
-      // cell = UITableViewCell(style: .default, reuseIdentifier: "MyCell")
-      // - XIB로부터 MyCell을 생성해야 합니다.
-      cell = Bundle.main.loadNibNamed("MyCell", owner: nil, options: nil)?[0] as? MyCell
-      //     [Any]?[0] -> Any -> as? MyCell -> MyCell?
-      // cell?.reuseIdentifier = "MyCell"
-      print("Cell이 새로 생성되었다.")
-    } else {
-      print("Cell이 재활용되었다.")
-    }
+  /*
+    // 1. CustomCell을 xib 기반으로 생성한다.
+    // 2. 생성된 Cell의 xib에서 reuseIdentifier를 반드시 정의해야 한다.
+    // 3. Bundle을 통해 Cell을 생성해야 한다.
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+      var cell: MyCell? = tableView.dequeueReusableCell(withIdentifier: "MyCell") as? MyCell
+      if (cell == nil) {
+        // cell = UITableViewCell(style: .default, reuseIdentifier: "MyCell")
+        // - XIB로부터 MyCell을 생성해야 합니다.
+        cell = Bundle.main.loadNibNamed("MyCell", owner: nil, options: nil)?[0] as? MyCell
+        //     [Any]?[0] -> Any -> as? MyCell -> MyCell?
+        // cell?.reuseIdentifier = "MyCell"
+        print("Cell이 새로 생성되었다.")
+      } else {
+        print("Cell이 재활용되었다.")
+      }
     
-    cell?.nameLabel.text = "\(indexPath)"
-    cell?.profileImageView?.image = UIImage(named: "logo")
+      cell?.nameLabel.text = "\(indexPath)"
+      cell?.profileImageView?.image = UIImage(named: "logo")
   
-    return cell!
+      return cell!
+    }
+   */
+  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    let reuseIdentifier = "MyCell"
+    
+    // tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath)
+    //  : 미리 tableview에 nib 또는 Class를 등록해두면, 객체를 자동으로 생성해서 재활용해준다.
+    //  - tableView.register(UINib(nibName: "MyCell", bundle: nil), forCellReuseIdentifier: "MyCell")
+    let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! MyCell
+    
+    cell.nameLabel.text = "\(indexPath)"
+    cell.profileImageView?.image = UIImage(named: "logo")
+    
+    return cell
   }
-  
-  
 }
