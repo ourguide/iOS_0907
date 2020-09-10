@@ -29,6 +29,15 @@ class ViewController: UIViewController {
   }
   
   @IBAction func valueChanged(_ sender: UISlider) {
+    print(sender.value)
+    
+    let isAnimating = imageView.isAnimating
+    if let interval = TimeInterval(exactly: sender.value * 5) {
+      imageView.animationDuration = interval
+    }
+    if isAnimating {
+      imageView.startAnimating()
+    }
   }
 }
 
