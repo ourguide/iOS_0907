@@ -16,32 +16,42 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aI9-E6-v3l">
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aI9-E6-v3l">
                                 <rect key="frame" x="0.0" y="623" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="5w9-Rf-rs5"/>
+                                </constraints>
                                 <items>
                                     <barButtonItem systemItem="play" id="GdJ-8T-9Tm"/>
                                     <barButtonItem systemItem="pause" id="f0Z-Ys-zFs"/>
                                     <barButtonItem style="plain" id="2bx-4Q-aHG">
                                         <slider key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" id="T5g-QV-THQ">
-                                            <rect key="frame" x="66.5" y="5" width="298" height="34"/>
+                                            <rect key="frame" x="66.5" y="5" width="302" height="34"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </slider>
                                     </barButtonItem>
                                 </items>
                             </toolbar>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="campFire01.gif" translatesAutoresizingMaskIntoConstraints="NO" id="3cm-nC-ZeM">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="campFire01.gif" translatesAutoresizingMaskIntoConstraints="NO" id="LjQ-tl-Kf0">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="LjQ-tl-Kf0" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="1Zz-Hy-9XR"/>
+                            <constraint firstItem="aI9-E6-v3l" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="7Vq-B1-rgJ"/>
+                            <constraint firstItem="LjQ-tl-Kf0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Q4u-zv-OFu"/>
+                            <constraint firstItem="aI9-E6-v3l" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="ih5-ms-KPd"/>
+                            <constraint firstItem="LjQ-tl-Kf0" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="oG2-Jl-eGa"/>
+                            <constraint firstItem="aI9-E6-v3l" firstAttribute="top" secondItem="LjQ-tl-Kf0" secondAttribute="bottom" id="z6A-TY-ToY"/>
+                            <constraint firstItem="aI9-E6-v3l" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" id="zlu-AF-mRZ"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-23.199999999999999" y="125.4872563718141"/>
+            <point key="canvasLocation" x="-605.60000000000002" y="-30.134932533733135"/>
         </scene>
     </scenes>
     <resources>
