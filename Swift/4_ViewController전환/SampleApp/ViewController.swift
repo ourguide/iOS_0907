@@ -19,11 +19,16 @@ class ViewController: UIViewController {
     
     // iOS 13 이후로, ViewController를 fullscreen으로 설정하기 위해서는 아래와 같은 코드가 필요합니다.
     controller.modalPresentationStyle = .fullScreen
+    controller.user = User(name: "Tom", age: 42)
+    // controller.nameLabel.text = "Tom"
+    // controller.ageLabel.text = "42"
     
     // closure 안에서 메소드 또는 프로퍼티에 접근할 때는,
     // self를 명시적으로 사용해야 합니다.
     present(controller, animated: true) {
-      // self.dismiss(animated: true)
+      print("present callback")
+      // controller.nameLabel.text = "Tom"
+      // controller.ageLabel.text = "42"
     }
   }
   
@@ -40,18 +45,10 @@ class ViewController: UIViewController {
     performSegue(withIdentifier: "MySegue", sender: nil)
   }
   
-  @IBAction func open3(_ sender: Any) {
-  }
+  @IBAction func open3(_ sender: Any) {}
   
-  @IBAction func unwind(segue: UIStoryboardSegue) {
-    
-  }
-  
+  @IBAction func unwind(segue: UIStoryboardSegue) {}
 }
-
-
-
-
 
 // ViewController 전환
 // => UIViewController의 역활은 View의 이벤트를 처리하고, View를 설정하는 작업을 수행합니다.
@@ -59,4 +56,3 @@ class ViewController: UIViewController {
 // 1. XIB 기반
 // 2. Storyboard 기반
 // 3. Storyboard 기반 - XIB 스타일
-
