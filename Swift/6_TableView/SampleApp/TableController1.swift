@@ -46,6 +46,7 @@ extension TableController1: UITableViewDataSource {
   // 64x64 - logo@2x.png
   // 96x96 - logo@3x.png
 
+#if false
   // 데이터의 수 만큼 뷰를 생성하는 것이 아니라, 화면에 필요한만큼만 뷰를 생성하고, 재활용해야 한다.
   //  Android - view holder pattern
   //          -> RecyclerView
@@ -72,4 +73,14 @@ extension TableController1: UITableViewDataSource {
     
     return cell!
   }
+#endif
+  
+  // 1. CustomCell을 xib 기반으로 생성한다.
+  
+  
+  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+      return UITableViewCell()
+  }
+  
+  
 }
