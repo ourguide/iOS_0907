@@ -15,7 +15,8 @@
   
   _animals = @[ @"사자", @"코끼리", @"뱀", @"곰", @"늑대" ];
   _fruits = @[ @"사과", @"배", @"바나나" ];
-  
+
+  // 명시적으로 지정
   _pickerView.delegate = self;
   _pickerView.dataSource = self;
 }
@@ -62,11 +63,14 @@
        inComponent:(NSInteger)component {
   
   if (component == 0)
-      [_pickerView reloadComponent:1]; // !!
+    [_pickerView reloadComponent:1]; // !!
   
-  
-  
-  // _nameLabel.text = _animals[row];
+  NSInteger selectedIndex = [_pickerView selectedRowInComponent:0];
+  NSInteger row2 = [_pickerView selectedRowInComponent:1];
+  if (selectedIndex == 0)
+    _nameLabel.text = _animals[row2];
+  else
+    _nameLabel.text = _fruits[row2];
 }
 
 @end
