@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		7A3CF09C250B22D000211DDE /* MyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A3CF09B250B22D000211DDE /* MyView.m */; };
+		7A3CF09F250B35C500211DDE /* CustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A3CF09E250B35C500211DDE /* CustomView.m */; };
+		7A3CF0A1250B35E100211DDE /* CustomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A3CF0A0250B35E100211DDE /* CustomView.xib */; };
 		7A8A501F2508A0650020358F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A8A501E2508A0650020358F /* AppDelegate.m */; };
 		7A8A50282508A0650020358F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A8A50262508A0650020358F /* Main.storyboard */; };
 		7A8A502A2508A0660020358F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A8A50292508A0660020358F /* Assets.xcassets */; };
@@ -19,6 +21,9 @@
 /* Begin PBXFileReference section */
 		7A3CF09A250B22D000211DDE /* MyView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyView.h; sourceTree = "<group>"; };
 		7A3CF09B250B22D000211DDE /* MyView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyView.m; sourceTree = "<group>"; };
+		7A3CF09D250B35C500211DDE /* CustomView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomView.h; sourceTree = "<group>"; };
+		7A3CF09E250B35C500211DDE /* CustomView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomView.m; sourceTree = "<group>"; };
+		7A3CF0A0250B35E100211DDE /* CustomView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomView.xib; sourceTree = "<group>"; };
 		7A8A501A2508A0650020358F /* SampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A8A501D2508A0650020358F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		7A8A501E2508A0650020358F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -72,6 +77,9 @@
 				7A8A502F2508A0660020358F /* main.m */,
 				7A3CF09A250B22D000211DDE /* MyView.h */,
 				7A3CF09B250B22D000211DDE /* MyView.m */,
+				7A3CF09D250B35C500211DDE /* CustomView.h */,
+				7A3CF09E250B35C500211DDE /* CustomView.m */,
+				7A3CF0A0250B35E100211DDE /* CustomView.xib */,
 			);
 			path = SampleApp;
 			sourceTree = "<group>";
@@ -135,6 +143,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7A8A502D2508A0660020358F /* LaunchScreen.storyboard in Resources */,
+				7A3CF0A1250B35E100211DDE /* CustomView.xib in Resources */,
 				7A8A502A2508A0660020358F /* Assets.xcassets in Resources */,
 				7A8A50282508A0650020358F /* Main.storyboard in Resources */,
 			);
@@ -147,6 +156,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A3CF09F250B35C500211DDE /* CustomView.m in Sources */,
 				7A3CF09C250B22D000211DDE /* MyView.m in Sources */,
 				7A8A501F2508A0650020358F /* AppDelegate.m in Sources */,
 				7A8A50302508A0660020358F /* main.m in Sources */,
