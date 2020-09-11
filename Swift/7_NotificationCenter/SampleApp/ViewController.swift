@@ -27,13 +27,20 @@ class ViewController: UIViewController {
                                    queue: .main) { notification in
                                     
       let keyboardHeight = self.softKeyboardHeight(notification)
-      self.bottomConstraint.constant = 32 + keyboardHeight
+      
+      UIView.animate(withDuration: 1, animations: {
+        self.bottomConstraint.constant = 100 + keyboardHeight
+        self.view.layoutIfNeeded()
+      })
     }
     
     notificationCenter.addObserver(forName: UIResponder.keyboardWillHideNotification,
                                    object: nil,
                                    queue: .main) { _ in
-      self.bottomConstraint.constant = 32
+      UIView.animate(withDuration: 1, animations: {
+        self.bottomConstraint.constant = 32
+        self.view.layoutIfNeeded()
+      })
     }
     
     /*
