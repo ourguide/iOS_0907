@@ -180,14 +180,14 @@ class ViewController: UIViewController {
 //    }
     
     if let user = try? response.map(User.self) {
-      print(user)
+      self.imageView.kf.setImage(with: URL(string: user.avatarUrl))
     }
   }
   
   // 5. Moya
   @IBAction func click5(_ sender: Any) {
     let provider = MoyaProvider<GithubAPI>()
-    provider.request(.getUser(login: "ourguide")) { result in
+    provider.request(.getUser(login: "google")) { result in
       switch result {
       case let .success(response):
         self.handleResponse(response: response)
