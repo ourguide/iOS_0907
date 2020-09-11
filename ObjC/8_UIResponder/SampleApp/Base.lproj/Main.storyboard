@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JuR-wf-hlw" customClass="CustomView">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="539"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <gestureRecognizers/>
                                 <connections>
@@ -35,10 +35,10 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="rOe-ok-RtT" firstAttribute="bottom" secondItem="JuR-wf-hlw" secondAttribute="bottom" id="OVm-lQ-qD5"/>
+                            <constraint firstItem="rOe-ok-RtT" firstAttribute="bottom" secondItem="JuR-wf-hlw" secondAttribute="bottom" constant="64" id="OVm-lQ-qD5"/>
                             <constraint firstItem="rOe-ok-RtT" firstAttribute="trailing" secondItem="JuR-wf-hlw" secondAttribute="trailing" id="W4p-1s-zv3"/>
                             <constraint firstItem="JuR-wf-hlw" firstAttribute="leading" secondItem="rOe-ok-RtT" secondAttribute="leading" id="aYS-tc-DI1"/>
-                            <constraint firstItem="JuR-wf-hlw" firstAttribute="top" secondItem="rOe-ok-RtT" secondAttribute="top" id="i55-KG-to0"/>
+                            <constraint firstItem="JuR-wf-hlw" firstAttribute="top" secondItem="rOe-ok-RtT" secondAttribute="top" constant="64" id="i55-KG-to0"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="rOe-ok-RtT"/>
                     </view>
