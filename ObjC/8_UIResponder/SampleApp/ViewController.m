@@ -8,11 +8,20 @@
 
 @implementation ViewController
 
+- (IBAction)buttonClick:(id)sender {
+  NSLog(@"buttonClick");
+}
+
+- (IBAction)tap:(id)sender {
+   NSLog(@"tap");
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
 }
 
+#if 0
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
   NSLog(@"touchesBegan");
   
@@ -34,6 +43,7 @@
 - (void)touchesCancelled:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
   NSLog(@"touchesCancelled");
 }
+#endif
 
 
 @end
