@@ -142,7 +142,15 @@ class ViewController: UIViewController {
       return
     }
     
-    imageView.kf.setImage(with: url)
+    // > |
+    let processor = DownsamplingImageProcessor(size: imageView.bounds.size)
+      |> RoundCornerImageProcessor(cornerRadius: 100)
+    
+    imageView.kf.setImage(with: url, options: [
+      .processor(processor),
+      .scaleFactor(UIScreen.main.scale),
+      .cacheOriginalImage
+    ])
   }
   
   @IBAction func click5(_ sender: Any) {}
