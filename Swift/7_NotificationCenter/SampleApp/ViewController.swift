@@ -24,18 +24,27 @@ class ViewController: UIViewController {
                                    object: nil)
   }
   
-  @objc func keyboardWillShow() {
+  @objc func keyboardWillShow(_ notification: Notification) {
     print("keyboardWillShow")
-    
-    bottomConstraint.constant = 320
-    // view.frame = CGRect(x: 0, y: -200, width: 375, height: 667)
+    let keyboardHeight = softKeyboardHeight(notification)
+    bottomConstraint.constant = 32 + keyboardHeight
   }
   
-  @objc func keyboardWillHide() {
+  @objc func keyboardWillHide(_ notification: Notification) {
     print("keyboardWillHide")
-    bottomConstraint.constant = 120
-    // view.frame = CGRect(x: 0, y: 0, width: 375, height: 667)
+    bottomConstraint.constant = 32
   }
+  
+  // 키보드의 frame 정보를 알아내기 위해서는, notification의 정보가 필요합니다.
+  func softKeyboardHeight(_ notification: Notification) -> CGFloat {
+    if let frame = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+      return frame.cgRectValue.height
+    }
+    
+    return 0
+  }
+  
+  
   
   override func touchesEnded(_ touches: Set<UITouch>,
                              with event: UIEvent?)

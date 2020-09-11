@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="dX7-oN-l03">
-                                <rect key="frame" x="87.5" y="471" width="200" height="76"/>
+                                <rect key="frame" x="87.5" y="559" width="200" height="76"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="이메일 주소" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HdY-K6-TqW">
                                         <rect key="frame" x="0.0" y="0.0" width="200" height="34"/>
@@ -37,7 +37,7 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="dX7-oN-l03" secondAttribute="bottom" constant="120" id="Agy-cd-6co"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="dX7-oN-l03" secondAttribute="bottom" constant="32" id="Agy-cd-6co"/>
                             <constraint firstItem="dX7-oN-l03" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="gzn-em-tUK"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
