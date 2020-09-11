@@ -43,6 +43,13 @@ class ViewController: UIViewController {
       })
     }
     
+    notificationCenter.addObserver(forName: UIDevice.batteryLevelDidChangeNotification, object: nil, queue: .main) { notification in
+      print("batteryLevelDidChangeNotification: \(notification)")
+    }
+    notificationCenter.addObserver(forName: UIDevice.batteryStateDidChangeNotification, object: nil, queue: .main) { notification in
+      print("batteryStateDidChangeNotification: \(notification)")
+    }
+    
     /*
      notificationCenter.addObserver(self,
                                     selector: #selector(keyboardWillShow),
