@@ -22,6 +22,11 @@ class ViewController: UIViewController {
     
     let notificationCenter = NotificationCenter.default
     
+    // 사용자 정의 알림을 등록하는 것도 가능합니다.
+    notificationCenter.addObserver(forName: NSNotification.Name(rawValue: "RECEIVESMS"), object: nil, queue: .main) { _ in
+      print("메일이 도착하였습니다.")
+    }
+    
     notificationCenter.addObserver(forName: UIResponder.keyboardWillShowNotification,
                                    object: nil,
                                    queue: .main) { notification in
@@ -37,11 +42,16 @@ class ViewController: UIViewController {
     notificationCenter.addObserver(forName: UIResponder.keyboardWillHideNotification,
                                    object: nil,
                                    queue: .main) { _ in
+      print("keyboardWillHideNotification")
       UIView.animate(withDuration: 1, animations: {
         self.bottomConstraint.constant = 32
         self.view.layoutIfNeeded()
       })
     }
+    
+    // 배터리 상태를 모니터링 하기 위해서는
+    let device = UIDevice.current
+    device.isBatteryMonitoringEnabled = true // !!
     
     notificationCenter.addObserver(forName: UIDevice.batteryLevelDidChangeNotification, object: nil, queue: .main) { notification in
       print("batteryLevelDidChangeNotification: \(notification)")
@@ -80,6 +90,11 @@ class ViewController: UIViewController {
     }
     
     return 0
+  }
+  
+  @IBAction func click(_ sender: Any) {
+    let notificationCenter = NotificationCenter.default
+    notificationCenter.post(name: NSNotification.Name(rawValue: "RECEIVESMS"), object: nil)
   }
   
   override func touchesEnded(_ touches: Set<UITouch>,
