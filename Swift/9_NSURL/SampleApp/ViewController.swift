@@ -1,4 +1,5 @@
 import Alamofire // Alamofire 의존성 추가
+import Kingfisher
 import UIKit
 
 class ViewController: UIViewController {
@@ -116,7 +117,9 @@ class ViewController: UIViewController {
    }
    */
  
-  // 3. Swift Package Manager - Swift
+  //    3. Swift Package Manager - Swift
+  
+  // 3. Alamofire
   @IBAction func click3(_ sender: Any) {
     AF.request(ViewController.imageURL).responseData { response in
       // response.result : Result<Data, AFError>
@@ -133,7 +136,14 @@ class ViewController: UIViewController {
     }
   }
   
-  @IBAction func click4(_ sender: Any) {}
+  // 4. Kingfisher
+  @IBAction func click4(_ sender: Any) {
+    guard let url = URL(string: ViewController.imageURL) else {
+      return
+    }
+    
+    imageView.kf.setImage(with: url)
+  }
   
   @IBAction func click5(_ sender: Any) {}
   
