@@ -20,12 +20,18 @@ extension TableController2: UITableViewDataSource {
   {
     return 42
   }
-  
+
   func tableView(_ tableView: UITableView,
-                 cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCell(withIdentifier: "MyCell2", for: indexPath) as! MyCell2
-    cell.nameLabel.text = "\(indexPath)"
-    cell.profileImageView.image = UIImage(named: "logo")
+                 cellForRowAt indexPath: IndexPath) -> UITableViewCell
+  {
+    if indexPath.row % 2 == 0 {
+      let cell = tableView.dequeueReusableCell(withIdentifier: "MyCell2", for: indexPath) as! MyCell2
+      cell.nameLabel.text = "\(indexPath)"
+      cell.profileImageView.image = UIImage(named: "logo")
+      return cell
+    }
+    let cell = tableView.dequeueReusableCell(withIdentifier: "MyCell", for: indexPath)
+    cell.detailTextLabel?.text = "\(indexPath)"
     return cell
   }
 
