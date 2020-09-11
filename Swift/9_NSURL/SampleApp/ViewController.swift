@@ -155,19 +155,25 @@ class ViewController: UIViewController {
   }
   
   // (Encodable)JSON <- User <- JSON(Decodable)
-  struct User : Decodable {
+  struct User: Decodable {
     let login: String
     let id: Int
-    let avatar_url: String
+    let avatarUrl: String
+    
+    private enum CodingKeys: String, CodingKey {
+      case login
+      case id
+      case avatarUrl = "avatar_url"
+    }
   }
   
   /*
-   {
-   "login": "ourguide",
-   "id": 591413,
-   "avatar_url": "https://avatars0.githubusercontent.com/u/591413?v=4",
-   }
-  */
+    {
+    "login": "ourguide",
+    "id": 591413,
+    "avatar_url": "https://avatars0.githubusercontent.com/u/591413?v=4",
+    }
+   */
   func handleResponse(response: Response) {
 //    if let user = try? response.mapJSON() {
 //      print(user)
@@ -189,8 +195,6 @@ class ViewController: UIViewController {
         print(error.localizedDescription)
       }
     }
-    
-    
   }
   
   override func viewDidLoad() {
