@@ -16,16 +16,25 @@ class TableController2: UIViewController {
 
 extension TableController2: UITableViewDataSource {
   func tableView(_ tableView: UITableView,
-                 numberOfRowsInSection section: Int) -> Int {
+                 numberOfRowsInSection section: Int) -> Int
+  {
     return 42
   }
   
   func tableView(_ tableView: UITableView,
                  cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCell(withIdentifier: "MyCell", for: indexPath)
-    cell.detailTextLabel?.text = "\(indexPath)"
+    let cell = tableView.dequeueReusableCell(withIdentifier: "MyCell2", for: indexPath) as! MyCell2
+    cell.nameLabel.text = "\(indexPath)"
+    cell.profileImageView.image = UIImage(named: "logo")
     return cell
   }
-  
-  
+
+  /*
+    func tableView(_ tableView: UITableView,
+                   cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+      let cell = tableView.dequeueReusableCell(withIdentifier: "MyCell", for: indexPath)
+      cell.detailTextLabel?.text = "\(indexPath)"
+      return cell
+    }
+   */
 }

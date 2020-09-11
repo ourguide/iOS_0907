@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7A3CF095250B033D00211DDE /* MyCell2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3CF094250B033D00211DDE /* MyCell2.swift */; };
 		7A5677A1250AFD5400EECB81 /* TableController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A5677A0250AFD5300EECB81 /* TableController2.swift */; };
 		7A8A504D2508BDDB0020358F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A8A504C2508BDDB0020358F /* AppDelegate.swift */; };
 		7A8A50512508BDDB0020358F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A8A50502508BDDB0020358F /* ViewController.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7A3CF094250B033D00211DDE /* MyCell2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCell2.swift; sourceTree = "<group>"; };
 		7A5677A0250AFD5300EECB81 /* TableController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableController2.swift; sourceTree = "<group>"; };
 		7A8A50492508BDDB0020358F /* SampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A8A504C2508BDDB0020358F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -75,6 +77,7 @@
 				7AA65AF4250A0E9300756A76 /* MyCell.swift */,
 				7AA65AF5250A0E9300756A76 /* MyCell.xib */,
 				7A5677A0250AFD5300EECB81 /* TableController2.swift */,
+				7A3CF094250B033D00211DDE /* MyCell2.swift */,
 			);
 			path = SampleApp;
 			sourceTree = "<group>";
@@ -152,6 +155,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A3CF095250B033D00211DDE /* MyCell2.swift in Sources */,
 				7A5677A1250AFD5400EECB81 /* TableController2.swift in Sources */,
 				7A8A50512508BDDB0020358F /* ViewController.swift in Sources */,
 				7AA65AF6250A0E9300756A76 /* MyCell.swift in Sources */,

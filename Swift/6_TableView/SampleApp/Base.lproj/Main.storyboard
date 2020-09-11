@@ -99,6 +99,41 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MyCell2" id="tBB-YO-86q" customClass="MyCell2" customModule="SampleApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="83.5" width="375" height="112.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tBB-YO-86q" id="s0G-f3-nFY">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="112.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yrv-aC-AtB">
+                                                    <rect key="frame" x="147.5" y="16" width="80" height="80.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="80" id="EyB-61-trR"/>
+                                                        <constraint firstAttribute="width" constant="80" id="eUv-c4-fNp"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rK3-6C-dF4">
+                                                    <rect key="frame" x="73.5" y="46" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="yrv-aC-AtB" firstAttribute="top" secondItem="s0G-f3-nFY" secondAttribute="top" constant="16" id="90t-3Y-xl8"/>
+                                                <constraint firstItem="rK3-6C-dF4" firstAttribute="centerY" secondItem="yrv-aC-AtB" secondAttribute="centerY" id="ZwJ-br-ReX"/>
+                                                <constraint firstItem="rK3-6C-dF4" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="s0G-f3-nFY" secondAttribute="leading" constant="20" symbolic="YES" id="c9V-3v-9dc"/>
+                                                <constraint firstAttribute="bottom" secondItem="yrv-aC-AtB" secondAttribute="bottom" constant="16" id="dVl-f5-7jc"/>
+                                                <constraint firstItem="yrv-aC-AtB" firstAttribute="centerX" secondItem="s0G-f3-nFY" secondAttribute="centerX" id="ght-ey-YTc"/>
+                                                <constraint firstItem="yrv-aC-AtB" firstAttribute="leading" secondItem="rK3-6C-dF4" secondAttribute="trailing" constant="32" id="n2o-32-fM9"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="nameLabel" destination="rK3-6C-dF4" id="TcV-Sd-JKE"/>
+                                            <outlet property="profileImageView" destination="yrv-aC-AtB" id="Qfm-v8-RqX"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </prototypes>
                             </tableView>
                         </subviews>
@@ -118,7 +153,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OXK-Fm-CbN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-162" y="96"/>
+            <point key="canvasLocation" x="-162.40000000000001" y="95.802098950524751"/>
         </scene>
     </scenes>
     <resources>
