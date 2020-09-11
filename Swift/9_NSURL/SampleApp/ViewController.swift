@@ -1,5 +1,6 @@
 import Alamofire // Alamofire 의존성 추가
 import Kingfisher
+import Moya
 import UIKit
 
 class ViewController: UIViewController {
@@ -153,9 +154,110 @@ class ViewController: UIViewController {
     ])
   }
   
-  @IBAction func click5(_ sender: Any) {}
+  // (Encodable)JSON <- User <- JSON(Decodable)
+  struct User : Decodable {
+    let login: String
+    let id: Int
+    let avatar_url: String
+  }
+  
+  /*
+   {
+   "login": "ourguide",
+   "id": 591413,
+   "avatar_url": "https://avatars0.githubusercontent.com/u/591413?v=4",
+   }
+  */
+  func handleResponse(response: Response) {
+//    if let user = try? response.mapJSON() {
+//      print(user)
+//    }
+    
+    if let user = try? response.map(User.self) {
+      print(user)
+    }
+  }
+  
+  // 5. Moya
+  @IBAction func click5(_ sender: Any) {
+    let provider = MoyaProvider<GithubAPI>()
+    provider.request(.getUser(login: "ourguide")) { result in
+      switch result {
+      case let .success(response):
+        self.handleResponse(response: response)
+      case let .failure(error):
+        print(error.localizedDescription)
+      }
+    }
+    
+    
+  }
   
   override func viewDidLoad() {
     super.viewDidLoad()
+  }
+}
+
+// Android
+//   API
+//      Retrofit + OKHttp
+
+// iOS
+//   API
+//      Moya + Alamofire
+// ---------------------------
+
+enum GithubAPI {
+  // api.github.com/users/login
+  case getUser(login: String)
+  case search
+}
+
+// TargetType
+extension GithubAPI: TargetType {
+  var baseURL: URL {
+    return URL(string: "https://api.github.com")!
+  }
+  
+  var path: String {
+    switch self {
+    case let .getUser(login):
+      return "/users/\(login)"
+    case .search:
+      return "/search/users"
+    }
+  }
+  
+  // get, post, put, delete
+  var method: Moya.Method {
+    switch self {
+    case .getUser:
+      return .get
+    case .search:
+      return .post
+    }
+  }
+  
+  // Test 목적
+  var sampleData: Data {
+    return Data()
+  }
+  
+  var task: Task {
+    switch self {
+    case .getUser:
+      return .requestPlain
+    case .search:
+      return .requestPlain
+    }
+  }
+  
+  var headers: [String: String]? {
+    switch self {
+//    case .getUser:
+//      return [ "Authorization": "Bearer xxxx" ]
+    default:
+      return ["Content-Type": "application/json"]
+    }
   }
 }

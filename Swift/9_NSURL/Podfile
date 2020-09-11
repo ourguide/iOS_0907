@@ -8,4 +8,5 @@ target 'SampleApp' do
   # Pods for SampleApp
   pod 'Alamofire', '~> 5.2'
   pod 'Kingfisher', '~> 5.0'
+  pod 'Moya', '~> 14.0'
 end
