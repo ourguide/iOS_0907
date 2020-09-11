@@ -1,5 +1,7 @@
 import UIKit
 
+// open: 다른 모듈에서 클래스에 대한 확장을 허용하는 문법
+
 class ViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
