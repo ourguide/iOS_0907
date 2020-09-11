@@ -1,7 +1,7 @@
+import Alamofire // Alamofire 의존성 추가
 import UIKit
 
 class ViewController: UIViewController {
-  
   static let imageURL = "https://images.pexels.com/photos/956981/milky-way-starry-sky-night-sky-star-956981.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
   
   @IBOutlet var imageView: UIImageView!
@@ -34,7 +34,7 @@ class ViewController: UIViewController {
     }
     
     let session = URLSession(configuration: .default)
-    let task = session.downloadTask(with: url) { (location, response, error) in
+    let task = session.downloadTask(with: url) { location, response, error in
       if error != nil {
         print(error?.localizedDescription ?? "Unknown error")
         return
@@ -49,7 +49,7 @@ class ViewController: UIViewController {
       //  400..<500 - 오류(클라이언트)
       //  500..<600 - 오류(서버)
       print("\(response.statusCode)")
-      guard 200..<300 ~= response.statusCode else {
+      guard 200 ..< 300 ~= response.statusCode else {
         return
       }
       
@@ -77,23 +77,67 @@ class ViewController: UIViewController {
     task.resume() // !!
   }
   
+  // Objective C
+  //  => AFNetworking
+  // Swift
+  //  => Alamofire
+  //  => Kingfisher
+  
+  // iOS - 패키지(라이브러리 설치)
+  // 1. Cocoapod - ObjC / Swift
+  //  : 소스를 같이 빌드
+  //  문제점: 빌드가 느리다.
+  //   1) gem: sudo gem install cocoapods
+  //   2) homebrew: brew install cocoapods
+  
+  //  1.
+  //  $ pod init
+  //   -> Podfile 생성
+  //  2.
+  //    Podfile에 의존성을 추가하면 됩니다.
+  //  3.
+  //  $ pod install
+  //   -> Podfile.lock : 설치된 라이브러리의 버전을 고정한다.
+  //     Pods - project : 설치된 라이브러리에 대한 프로젝트
+  //     ProjectName.xcworkspace
+  
+  //  Workspace
+  //    - Project
+  //    - Pods
+  
+  // 2. Carthage - Swift
+  //  : 빌드된 라이브러리 참조
+  //  - 처음 설치할 때만, 느리고 이후에는 빠르게 동작한다.
+  
+  /*
+   enum Result {
+      case success(Data)
+      case failure(AFError)
+   }
+   */
+ 
+  // 3. Swift Package Manager - Swift
   @IBAction func click3(_ sender: Any) {
-    
+    AF.request(ViewController.imageURL).responseData { response in
+      // response.result : Result<Data, AFError>
+      switch response.result {
+      case let .success(data):
+        guard let image = UIImage(data: data) else {
+          return
+        }
+        self.imageView.image = image
+        
+      case let .failure(error):
+        print(error.localizedDescription)
+      }
+    }
   }
   
-  @IBAction func click4(_ sender: Any) {
-    
-  }
+  @IBAction func click4(_ sender: Any) {}
   
-  @IBAction func click5(_ sender: Any) {
-    
-  }
-  
-  
+  @IBAction func click5(_ sender: Any) {}
   
   override func viewDidLoad() {
     super.viewDidLoad()
-
   }
 }
-
