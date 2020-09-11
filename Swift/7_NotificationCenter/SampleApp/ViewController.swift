@@ -29,7 +29,7 @@ class ViewController: UIViewController {
       let keyboardHeight = self.softKeyboardHeight(notification)
       
       UIView.animate(withDuration: 1, animations: {
-        self.bottomConstraint.constant = 100 + keyboardHeight
+        self.bottomConstraint.constant = 32 + keyboardHeight
         self.view.layoutIfNeeded()
       })
     }
