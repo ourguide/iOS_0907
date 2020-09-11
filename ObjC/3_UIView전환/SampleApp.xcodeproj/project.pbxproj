@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7A56779E250AF0CD00EECB81 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A56779C250AF0CD00EECB81 /* FirstViewController.swift */; };
+		7A56779F250AF0CD00EECB81 /* FirstViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A56779D250AF0CD00EECB81 /* FirstViewController.xib */; };
 		7A8A501F2508A0650020358F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A8A501E2508A0650020358F /* AppDelegate.m */; };
 		7A8A50282508A0650020358F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A8A50262508A0650020358F /* Main.storyboard */; };
 		7A8A502A2508A0660020358F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A8A50292508A0660020358F /* Assets.xcassets */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7A56779C250AF0CD00EECB81 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		7A56779D250AF0CD00EECB81 /* FirstViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FirstViewController.xib; sourceTree = "<group>"; };
 		7A8A501A2508A0650020358F /* SampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A8A501D2508A0650020358F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		7A8A501E2508A0650020358F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -67,6 +71,8 @@
 				7A8A502B2508A0660020358F /* LaunchScreen.storyboard */,
 				7A8A502E2508A0660020358F /* Info.plist */,
 				7A8A502F2508A0660020358F /* main.m */,
+				7A56779C250AF0CD00EECB81 /* FirstViewController.swift */,
+				7A56779D250AF0CD00EECB81 /* FirstViewController.xib */,
 			);
 			path = SampleApp;
 			sourceTree = "<group>";
@@ -102,6 +108,7 @@
 				TargetAttributes = {
 					7A8A50192508A0650020358F = {
 						CreatedOnToolsVersion = 11.7;
+						LastSwiftMigration = 1170;
 					};
 				};
 			};
@@ -131,6 +138,7 @@
 				7A8A502D2508A0660020358F /* LaunchScreen.storyboard in Resources */,
 				7A8A502A2508A0660020358F /* Assets.xcassets in Resources */,
 				7A8A50282508A0650020358F /* Main.storyboard in Resources */,
+				7A56779F250AF0CD00EECB81 /* FirstViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -144,6 +152,7 @@
 				7A8A501F2508A0650020358F /* AppDelegate.m in Sources */,
 				7A8A50302508A0660020358F /* main.m in Sources */,
 				7A8A503E2508B5530020358F /* ViewController.m in Sources */,
+				7A56779E250AF0CD00EECB81 /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,6 +292,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = SampleApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -292,6 +302,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.yoondev.SampleApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -300,6 +312,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = SampleApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -309,6 +322,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.yoondev.SampleApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

@@ -103,7 +103,7 @@
                                         </state>
                                         <connections>
                                             <action selector="navi2:" destination="rNe-kb-LPJ" eventType="touchUpInside" id="LEQ-Ya-sqm"/>
-                                            <segue destination="OWJ-cZ-cgZ" kind="show" id="ebB-uR-Rgt"/>
+                                            <segue destination="5Be-6n-6oM" kind="show" id="oIe-XP-ncn"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -128,7 +128,7 @@
             <objects>
                 <viewController modalPresentationStyle="fullScreen" id="Cdr-9D-TJJ" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="L2O-9L-1GP">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Zw-Ce-5sL">
@@ -154,9 +154,10 @@
             <objects>
                 <navigationController modalPresentationStyle="fullScreen" id="OWJ-cZ-cgZ" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" largeTitleDisplayMode="always" id="RSu-ba-Yuu"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Av4-lt-fX0">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="Av4-lt-fX0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.08235294118" green="0.63921568630000003" blue="0.6588235294" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                     </navigationBar>
                     <connections>
                         <segue destination="Cdr-9D-TJJ" kind="relationship" relationship="rootViewController" id="vxm-sz-XnL"/>
@@ -171,7 +172,7 @@
             <objects>
                 <viewController id="5Dz-xU-9lB" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MNS-up-TQK">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="tMJ-9h-ZK1"/>
@@ -187,7 +188,7 @@
             <objects>
                 <viewController id="VjZ-bG-Wcv" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cMy-c4-BQc">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="AdG-pd-3hk"/>
@@ -263,14 +264,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J0e-i1-2ut" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="IXW-jL-an6" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-718" y="72"/>
+            <point key="canvasLocation" x="-642" y="72"/>
         </scene>
         <!--Second-->
         <scene sceneID="BqM-LC-uZl">
             <objects>
                 <viewController id="rrt-tD-zIT" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Piq-2z-eh0">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mfy-04-PPK">
@@ -296,7 +297,7 @@
             <objects>
                 <viewController id="63s-vP-reP" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wzC-6I-6Oe">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="N6F-JS-Lmo"/>

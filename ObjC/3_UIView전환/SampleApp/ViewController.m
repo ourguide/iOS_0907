@@ -2,6 +2,12 @@
 
 @implementation ViewController
 
+// addSubView
+//     UIView
+//        - 새로운 View를 추가합니다.
+// removeFromSuperView
+//        - 부모 뷰로부터 제거된다.
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
@@ -23,6 +29,8 @@
   
   [UIView commitAnimations];
 }
+
+// Hero
 
 - (IBAction)close:(id)sender {
   
